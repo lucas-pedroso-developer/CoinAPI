@@ -17,6 +17,8 @@
 		CE8F33572A13D40B00FC65BD /* CoinAPIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33562A13D40B00FC65BD /* CoinAPIUITestsLaunchTests.swift */; };
 		CE8F33642A13D62500FC65BD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33632A13D62500FC65BD /* HomeViewController.swift */; };
 		CE8F33672A13D6F400FC65BD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33662A13D6F400FC65BD /* Coordinator.swift */; };
+		CE8F336B2A13F1D500FC65BD /* AlamofireAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F336A2A13F1D500FC65BD /* AlamofireAdapter.swift */; };
+		CE8F336D2A13F22800FC65BD /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F336C2A13F22800FC65BD /* HttpError.swift */; };
 		CFBE844D26D12F51BEFB87B2 /* Pods_CoinAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD9332842A4CB5D30FA8C3BB /* Pods_CoinAPITests.framework */; };
 		D144D373C2C66B73D0E5CAD5 /* Pods_CoinAPI_CoinAPIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0073747FE94BDEC6C37E7AF /* Pods_CoinAPI_CoinAPIUITests.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +61,8 @@
 		CE8F33562A13D40B00FC65BD /* CoinAPIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAPIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE8F33632A13D62500FC65BD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE8F33662A13D6F400FC65BD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		CE8F336A2A13F1D500FC65BD /* AlamofireAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapter.swift; sourceTree = "<group>"; };
+		CE8F336C2A13F22800FC65BD /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		E0073747FE94BDEC6C37E7AF /* Pods_CoinAPI_CoinAPIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinAPI_CoinAPIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB1C51B428B219EFEA7B8F1 /* Pods-CoinAPI-CoinAPIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinAPI-CoinAPIUITests.release.xcconfig"; path = "Target Support Files/Pods-CoinAPI-CoinAPIUITests/Pods-CoinAPI-CoinAPIUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,7 +105,6 @@
 				AD9028A544A2BD1FD8B7CD1F /* Pods-CoinAPITests.debug.xcconfig */,
 				23325E2987CA423C231478D3 /* Pods-CoinAPITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -140,6 +143,7 @@
 		CE8F33322A13D40700FC65BD /* CoinAPI */ = {
 			isa = PBXGroup;
 			children = (
+				CE8F33692A13F1C000FC65BD /* Network */,
 				CE8F33652A13D63A00FC65BD /* Presentation */,
 				CE8F33332A13D40700FC65BD /* AppDelegate.swift */,
 				CE8F33352A13D40700FC65BD /* SceneDelegate.swift */,
@@ -182,6 +186,15 @@
 				CE8F33662A13D6F400FC65BD /* Coordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CE8F33692A13F1C000FC65BD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F336A2A13F1D500FC65BD /* AlamofireAdapter.swift */,
+				CE8F336C2A13F22800FC65BD /* HttpError.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,7 +436,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8F33672A13D6F400FC65BD /* Coordinator.swift in Sources */,
+				CE8F336B2A13F1D500FC65BD /* AlamofireAdapter.swift in Sources */,
 				CE8F33342A13D40700FC65BD /* AppDelegate.swift in Sources */,
+				CE8F336D2A13F22800FC65BD /* HttpError.swift in Sources */,
 				CE8F33362A13D40700FC65BD /* SceneDelegate.swift in Sources */,
 				CE8F33642A13D62500FC65BD /* HomeViewController.swift in Sources */,
 			);
