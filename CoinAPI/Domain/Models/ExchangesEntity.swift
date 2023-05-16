@@ -1,5 +1,3 @@
-import Foundation
-
 struct ExchangesEntity : Codable {
     let exchangeId : String?
     let website : String?

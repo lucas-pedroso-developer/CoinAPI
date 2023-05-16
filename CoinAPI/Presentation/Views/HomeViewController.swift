@@ -1,5 +1,11 @@
 import UIKit
 
+protocol HomeViewProtocol: AnyObject {
+    func showLoading()
+    func hideLoading()
+    func showError(message: String)
+}
+
 class HomeViewController: UIViewController {
     
     var tableView: UITableView!
@@ -61,5 +67,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
         return cell
+    }
+}
+
+extension HomeViewController: HomeViewProtocol {
+    func showLoading() {
+        print("show loading")
+    }
+    
+    func hideLoading() {
+        print("hide loading")
+    }
+    
+    func showError(message: String) {
+        print("show error")
     }
 }
