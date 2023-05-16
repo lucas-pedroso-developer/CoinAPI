@@ -1,10 +1,3 @@
-//
-//  CoinAPIUITests.swift
-//  CoinAPIUITests
-//
-//  Created by user on 16/05/23.
-//
-
 import XCTest
 
 final class CoinAPIUITests: XCTestCase {

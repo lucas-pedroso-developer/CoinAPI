@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  CoinAPI
-//
-//  Created by user on 16/05/23.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

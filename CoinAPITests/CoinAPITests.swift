@@ -1,10 +1,3 @@
-//
-//  CoinAPITests.swift
-//  CoinAPITests
-//
-//  Created by user on 16/05/23.
-//
-
 import XCTest
 @testable import CoinAPI
 
