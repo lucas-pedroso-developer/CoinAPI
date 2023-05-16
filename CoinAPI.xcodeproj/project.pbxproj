@@ -21,6 +21,7 @@
 		CE8F336D2A13F22800FC65BD /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F336C2A13F22800FC65BD /* HttpError.swift */; };
 		CE8F33702A13FC7100FC65BD /* ExchangesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F336F2A13FC7100FC65BD /* ExchangesEntity.swift */; };
 		CE8F33722A1409D700FC65BD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33712A1409D700FC65BD /* HomeViewModel.swift */; };
+		CE8F33772A1414F300FC65BD /* HomeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33762A1414F300FC65BD /* HomeViewProtocol.swift */; };
 		CFBE844D26D12F51BEFB87B2 /* Pods_CoinAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD9332842A4CB5D30FA8C3BB /* Pods_CoinAPITests.framework */; };
 		D144D373C2C66B73D0E5CAD5 /* Pods_CoinAPI_CoinAPIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0073747FE94BDEC6C37E7AF /* Pods_CoinAPI_CoinAPIUITests.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		CE8F336C2A13F22800FC65BD /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		CE8F336F2A13FC7100FC65BD /* ExchangesEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangesEntity.swift; sourceTree = "<group>"; };
 		CE8F33712A1409D700FC65BD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		CE8F33762A1414F300FC65BD /* HomeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewProtocol.swift; sourceTree = "<group>"; };
 		E0073747FE94BDEC6C37E7AF /* Pods_CoinAPI_CoinAPIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinAPI_CoinAPIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB1C51B428B219EFEA7B8F1 /* Pods-CoinAPI-CoinAPIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinAPI-CoinAPIUITests.release.xcconfig"; path = "Target Support Files/Pods-CoinAPI-CoinAPIUITests/Pods-CoinAPI-CoinAPIUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,9 +181,9 @@
 		CE8F33652A13D63A00FC65BD /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CE8F33742A1413C300FC65BD /* ViewModel */,
+				CE8F33732A1413B700FC65BD /* Views */,
 				CE8F33682A13D71A00FC65BD /* Coordinator */,
-				CE8F33632A13D62500FC65BD /* HomeViewController.swift */,
-				CE8F33712A1409D700FC65BD /* HomeViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -206,9 +208,34 @@
 		CE8F336E2A13FBEB00FC65BD /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				CE8F336F2A13FC7100FC65BD /* ExchangesEntity.swift */,
+				CE8F33752A1413F400FC65BD /* Models */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		CE8F33732A1413B700FC65BD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F33632A13D62500FC65BD /* HomeViewController.swift */,
+				CE8F33762A1414F300FC65BD /* HomeViewProtocol.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE8F33742A1413C300FC65BD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F33712A1409D700FC65BD /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CE8F33752A1413F400FC65BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F336F2A13FC7100FC65BD /* ExchangesEntity.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,6 +483,7 @@
 				CE8F33342A13D40700FC65BD /* AppDelegate.swift in Sources */,
 				CE8F336D2A13F22800FC65BD /* HttpError.swift in Sources */,
 				CE8F33362A13D40700FC65BD /* SceneDelegate.swift in Sources */,
+				CE8F33772A1414F300FC65BD /* HomeViewProtocol.swift in Sources */,
 				CE8F33642A13D62500FC65BD /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
