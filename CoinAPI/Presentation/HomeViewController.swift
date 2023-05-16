@@ -2,6 +2,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    var tableView: UITableView!
     var coordinator: AppCoordinator?
     
     override func viewDidLoad() {
@@ -13,6 +14,7 @@ class HomeViewController: UIViewController {
     func setupViews() {
         setupLabel()
         setupLines()
+        setuptableView()
     }
     
     private func setupLabel() {
@@ -36,5 +38,28 @@ class HomeViewController: UIViewController {
         uiView.heightAnchor.constraint(equalToConstant: 1).isActive = true
         uiView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width).isActive = true
     }
+    
+    private func setuptableView() {
+        self.tableView = UITableView(frame: .zero)
+        self.tableView.backgroundColor = .clear
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        view.addSubview(tableView)
+        self.tableView.translatesAutoresizingMaskIntoConstraints = false
+        self.tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40).isActive = true
+        self.tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        self.tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
+        self.tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
+    }
+}
 
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
+        return cell
+    }
 }
