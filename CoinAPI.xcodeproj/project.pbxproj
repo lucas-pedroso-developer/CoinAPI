@@ -15,6 +15,7 @@
 		CE8F33552A13D40B00FC65BD /* CoinAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33542A13D40B00FC65BD /* CoinAPIUITests.swift */; };
 		CE8F33572A13D40B00FC65BD /* CoinAPIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33562A13D40B00FC65BD /* CoinAPIUITestsLaunchTests.swift */; };
 		CE8F33642A13D62500FC65BD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33632A13D62500FC65BD /* HomeViewController.swift */; };
+		CE8F33672A13D6F400FC65BD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33662A13D6F400FC65BD /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		CE8F33542A13D40B00FC65BD /* CoinAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAPIUITests.swift; sourceTree = "<group>"; };
 		CE8F33562A13D40B00FC65BD /* CoinAPIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAPIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE8F33632A13D62500FC65BD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CE8F33662A13D6F400FC65BD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,9 +129,18 @@
 		CE8F33652A13D63A00FC65BD /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CE8F33682A13D71A00FC65BD /* Coordinator */,
 				CE8F33632A13D62500FC65BD /* HomeViewController.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CE8F33682A13D71A00FC65BD /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F33662A13D6F400FC65BD /* Coordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8F33672A13D6F400FC65BD /* Coordinator.swift in Sources */,
 				CE8F33342A13D40700FC65BD /* AppDelegate.swift in Sources */,
 				CE8F33362A13D40700FC65BD /* SceneDelegate.swift in Sources */,
 				CE8F33642A13D62500FC65BD /* HomeViewController.swift in Sources */,
@@ -436,11 +448,12 @@
 				DEVELOPMENT_TEAM = 2GZ78V242F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoinAPI/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,11 +477,12 @@
 				DEVELOPMENT_TEAM = 2GZ78V242F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoinAPI/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
