@@ -7,6 +7,10 @@ protocol HomeViewProtocol: AnyObject {
     func reloadTableView()
 }
 
+enum Constants: String {
+    case title = "COIN API"
+}
+
 class HomeViewController: UIViewController {
     
     var tableView: UITableView!
@@ -34,7 +38,7 @@ class HomeViewController: UIViewController {
     
     private func setupLabel() {
         let label = UILabel()
-        label.text = "COIN API"
+        label.text = Constants.title.rawValue
         label.textColor = .black
         label.textAlignment = .center
         view.addSubview(label)

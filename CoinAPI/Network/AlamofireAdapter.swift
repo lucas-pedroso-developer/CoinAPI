@@ -17,6 +17,7 @@ public final class AlamofireAdapter: HttpGetClient {
         session.request(url, method: .get, headers: headers).responseData { dataResponse in
             guard let statusCode = dataResponse.response?.statusCode else { return
                 completion(.failure(.noConnectivity)) }
+            debugPrint(dataResponse)
             switch dataResponse.result {
                 case .failure: completion(.failure(.noConnectivity))
                 case .success(let data):
