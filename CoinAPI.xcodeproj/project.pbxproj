@@ -25,6 +25,8 @@
 		CE8F337E2A14178C00FC65BD /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F337D2A14178C00FC65BD /* HomeRepository.swift */; };
 		CE8F33812A14280500FC65BD /* HomeViewModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33802A14280500FC65BD /* HomeViewModelBuilder.swift */; };
 		CE8F33862A150AE900FC65BD /* APIRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33852A150AE900FC65BD /* APIRoute.swift */; };
+		CE8F338A2A15285000FC65BD /* ExchangesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33892A15285000FC65BD /* ExchangesCell.swift */; };
+		CE8F338E2A1529F700FC65BD /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F338D2A1529F700FC65BD /* Double+Extension.swift */; };
 		CFBE844D26D12F51BEFB87B2 /* Pods_CoinAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD9332842A4CB5D30FA8C3BB /* Pods_CoinAPITests.framework */; };
 		D144D373C2C66B73D0E5CAD5 /* Pods_CoinAPI_CoinAPIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0073747FE94BDEC6C37E7AF /* Pods_CoinAPI_CoinAPIUITests.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +77,8 @@
 		CE8F337D2A14178C00FC65BD /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
 		CE8F33802A14280500FC65BD /* HomeViewModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelBuilder.swift; sourceTree = "<group>"; };
 		CE8F33852A150AE900FC65BD /* APIRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoute.swift; sourceTree = "<group>"; };
+		CE8F33892A15285000FC65BD /* ExchangesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangesCell.swift; sourceTree = "<group>"; };
+		CE8F338D2A1529F700FC65BD /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		E0073747FE94BDEC6C37E7AF /* Pods_CoinAPI_CoinAPIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinAPI_CoinAPIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB1C51B428B219EFEA7B8F1 /* Pods-CoinAPI-CoinAPIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinAPI-CoinAPIUITests.release.xcconfig"; path = "Target Support Files/Pods-CoinAPI-CoinAPIUITests/Pods-CoinAPI-CoinAPIUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +159,7 @@
 		CE8F33322A13D40700FC65BD /* CoinAPI */ = {
 			isa = PBXGroup;
 			children = (
+				CE8F338B2A1529B900FC65BD /* Utilities */,
 				CE8F337B2A14176F00FC65BD /* Data */,
 				CE8F336E2A13FBEB00FC65BD /* Domain */,
 				CE8F33692A13F1C000FC65BD /* Network */,
@@ -225,7 +230,8 @@
 		CE8F33732A1413B700FC65BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CE8F33632A13D62500FC65BD /* HomeViewController.swift */,
+				CE8F33882A15283400FC65BD /* ViewControllers */,
+				CE8F33872A15282F00FC65BD /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,6 +283,38 @@
 				CE8F33802A14280500FC65BD /* HomeViewModelBuilder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		CE8F33872A15282F00FC65BD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F33892A15285000FC65BD /* ExchangesCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CE8F33882A15283400FC65BD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F33632A13D62500FC65BD /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CE8F338B2A1529B900FC65BD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F338C2A1529C400FC65BD /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CE8F338C2A1529C400FC65BD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F338D2A1529F700FC65BD /* Double+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -519,8 +557,10 @@
 			files = (
 				CE8F33672A13D6F400FC65BD /* Coordinator.swift in Sources */,
 				CE8F33702A13FC7100FC65BD /* ExchangesEntity.swift in Sources */,
+				CE8F338E2A1529F700FC65BD /* Double+Extension.swift in Sources */,
 				CE8F336B2A13F1D500FC65BD /* AlamofireAdapter.swift in Sources */,
 				CE8F33812A14280500FC65BD /* HomeViewModelBuilder.swift in Sources */,
+				CE8F338A2A15285000FC65BD /* ExchangesCell.swift in Sources */,
 				CE8F33722A1409D700FC65BD /* HomeViewModel.swift in Sources */,
 				CE8F337A2A1416D600FC65BD /* HomeUseCase.swift in Sources */,
 				CE8F33342A13D40700FC65BD /* AppDelegate.swift in Sources */,
