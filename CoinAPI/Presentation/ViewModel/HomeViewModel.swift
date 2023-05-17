@@ -3,7 +3,7 @@ protocol HomeViewModelProtocol {
 }
 
 class HomeViewModel: HomeViewModelProtocol {
-    var exchangesEntity: ExchangesEntity?
+    var exchangesEntity: [ExchangesEntity?]?
     weak var view: HomeViewProtocol?
     private let homeUseCase: HomeUseCaseProtocol
     

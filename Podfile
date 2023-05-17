@@ -6,7 +6,7 @@ target 'CoinAPI' do
   use_frameworks!
   
   pod 'Alamofire', '~> 5.6.4'
-  
+  pod 'Wormholy', '~> 1.6.6'
   # Pods for CoinAPI
 
   target 'CoinAPITests' do

@@ -1,5 +1,5 @@
 protocol HomeUseCaseProtocol {
-    func getExchanges(completion: @escaping (Result<ExchangesEntity, Error>) -> Void)
+    func getExchanges(completion: @escaping (Result<[ExchangesEntity], Error>) -> Void)
 }
 
 class HomeUseCase: HomeUseCaseProtocol {
@@ -9,7 +9,7 @@ class HomeUseCase: HomeUseCaseProtocol {
         self.homeRepository = homeRepository
     }
 
-    func getExchanges(completion: @escaping (Result<ExchangesEntity, Error>) -> Void) {
+    func getExchanges(completion: @escaping (Result<[ExchangesEntity], Error>) -> Void) {
         homeRepository.getExchanges() { result in
             switch result {
             case .success(let data):

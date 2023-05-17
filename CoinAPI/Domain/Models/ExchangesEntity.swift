@@ -16,7 +16,6 @@ struct ExchangesEntity : Codable {
     let volume1mthUsd : Double?
 
     enum CodingKeys: String, CodingKey {
-
         case exchangeId = "exchange_id"
         case website = "website"
         case name = "name"
