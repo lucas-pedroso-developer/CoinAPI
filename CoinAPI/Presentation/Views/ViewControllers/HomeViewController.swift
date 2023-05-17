@@ -25,9 +25,8 @@ class HomeViewController: UIViewController {
     }
     
     func setupViews() {
-        setupLabel()
-        setupLines()
         setuptableView()
+        setupNavigationController()
     }
     
     private func createViewModel() {
@@ -36,36 +35,25 @@ class HomeViewController: UIViewController {
         viewModel?.getExchanges()
     }
     
-    private func setupLabel() {
-        let label = UILabel()
-        label.text = Constants.title.rawValue
-        label.textColor = .black
-        label.textAlignment = .center
-        view.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    }
-
-    private func setupLines() {
-        let uiView = UIView()
-        uiView.backgroundColor = .lightGray
-        view.addSubview(uiView)
-        uiView.translatesAutoresizingMaskIntoConstraints = false
-        uiView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
-        uiView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        uiView.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        uiView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width).isActive = true
+    private func setupNavigationController() {
+        self.navigationController?.navigationBar.backgroundColor = .white
+        //self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.black,
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)
+        ]
+        self.title = "COIN API"
     }
     
     private func setuptableView() {
         self.tableView = UITableView(frame: .zero)
+        self.tableView.register(ExchangesCell.self, forCellReuseIdentifier: "ExchangesCell")
         self.tableView.backgroundColor = .clear
         self.tableView.delegate = self
         self.tableView.dataSource = self
         view.addSubview(tableView)
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
-        self.tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40).isActive = true
+        self.tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8).isActive = true
         self.tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
         self.tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
         self.tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
@@ -73,12 +61,21 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60.0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.getNumberOfRows(index: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ExchangesCell", for: indexPath) as! ExchangesCell
+        cell.setupCell(
+            title: viewModel?.getExchangeId(index: indexPath.row) ?? String(),
+            subtitle: viewModel?.getExchangeName(index: indexPath.row) ?? String(),
+            value: viewModel?.getVolumeDayOne(index: indexPath.row) ?? Double())
         return cell
     }
 }
