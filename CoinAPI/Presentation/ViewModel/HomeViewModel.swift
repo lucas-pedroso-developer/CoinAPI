@@ -17,11 +17,11 @@ class HomeViewModel: HomeViewModelProtocol {
     
     func getExchanges() {
         view?.showLoading()
-        
         homeUseCase.getExchanges() { [weak self] result in
             self?.view?.hideLoading()
             switch result {
             case .success:
+                print("Success")
                 break
             case .failure(let error):
                 self?.view?.showError(message: error.localizedDescription)

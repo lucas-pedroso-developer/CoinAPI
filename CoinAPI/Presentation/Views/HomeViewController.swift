@@ -4,23 +4,32 @@ protocol HomeViewProtocol: AnyObject {
     func showLoading()
     func hideLoading()
     func showError(message: String)
+    func reloadTableView()
 }
 
 class HomeViewController: UIViewController {
     
     var tableView: UITableView!
     var coordinator: AppCoordinator?
+    var viewModel: HomeViewModelProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupViews()
+        createViewModel()
     }
     
     func setupViews() {
         setupLabel()
         setupLines()
         setuptableView()
+    }
+    
+    private func createViewModel() {
+        let builder = HomeViewModelBuilder()
+        viewModel = builder.createViewModel(view: self)
+        viewModel?.getExchanges()
     }
     
     private func setupLabel() {
@@ -71,6 +80,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeViewController: HomeViewProtocol {
+    func reloadTableView() {
+        tableView.reloadData()
+    }
+    
     func showLoading() {
         print("show loading")
     }
