@@ -7,6 +7,7 @@ protocol Coordinator {
 class AppCoordinator: Coordinator {
     
     let window: UIWindow
+    var navigationController: UINavigationController?
     
     init(window: UIWindow) {
         self.window = window
@@ -14,9 +15,15 @@ class AppCoordinator: Coordinator {
     
     func start() {
         let viewController = HomeViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController = UINavigationController(rootViewController: viewController)
         viewController.coordinator = self
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+    }
+    
+    func showDetails() {
+        let viewController = DetailViewController()
+        viewController.coordinator = self
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

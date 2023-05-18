@@ -83,6 +83,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             value: viewModel?.getVolumeDayOne(index: indexPath.row) ?? Double())
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        coordinator?.showDetails()
+    }
 }
 
 extension HomeViewController: HomeViewProtocol {
