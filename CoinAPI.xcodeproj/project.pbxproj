@@ -30,6 +30,7 @@
 		CE8F33912A15976500FC65BD /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33902A15976500FC65BD /* LoadingView.swift */; };
 		CE8F33932A15A0D000FC65BD /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33922A15A0D000FC65BD /* LoadingViewController.swift */; };
 		CE8F33952A165A9B00FC65BD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33942A165A9B00FC65BD /* DetailViewController.swift */; };
+		CE8F33972A1694D900FC65BD /* IconsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33962A1694D900FC65BD /* IconsEntity.swift */; };
 		CFBE844D26D12F51BEFB87B2 /* Pods_CoinAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD9332842A4CB5D30FA8C3BB /* Pods_CoinAPITests.framework */; };
 		D144D373C2C66B73D0E5CAD5 /* Pods_CoinAPI_CoinAPIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0073747FE94BDEC6C37E7AF /* Pods_CoinAPI_CoinAPIUITests.framework */; };
 /* End PBXBuildFile section */
@@ -85,6 +86,7 @@
 		CE8F33902A15976500FC65BD /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		CE8F33922A15A0D000FC65BD /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		CE8F33942A165A9B00FC65BD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		CE8F33962A1694D900FC65BD /* IconsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsEntity.swift; sourceTree = "<group>"; };
 		E0073747FE94BDEC6C37E7AF /* Pods_CoinAPI_CoinAPIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinAPI_CoinAPIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB1C51B428B219EFEA7B8F1 /* Pods-CoinAPI-CoinAPIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinAPI-CoinAPIUITests.release.xcconfig"; path = "Target Support Files/Pods-CoinAPI-CoinAPIUITests/Pods-CoinAPI-CoinAPIUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				CE8F336F2A13FC7100FC65BD /* ExchangesEntity.swift */,
+				CE8F33962A1694D900FC65BD /* IconsEntity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 				CE8F336D2A13F22800FC65BD /* HttpError.swift in Sources */,
 				CE8F33362A13D40700FC65BD /* SceneDelegate.swift in Sources */,
 				CE8F33642A13D62500FC65BD /* HomeViewController.swift in Sources */,
+				CE8F33972A1694D900FC65BD /* IconsEntity.swift in Sources */,
 				CE8F33862A150AE900FC65BD /* APIRoute.swift in Sources */,
 				CE8F337E2A14178C00FC65BD /* HomeRepository.swift in Sources */,
 			);

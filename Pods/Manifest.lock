@@ -1,20 +1,32 @@
 PODS:
   - Alamofire (5.6.4)
+  - PromiseKit (6.18.1):
+    - PromiseKit/CorePromise (= 6.18.1)
+    - PromiseKit/Foundation (= 6.18.1)
+    - PromiseKit/UIKit (= 6.18.1)
+  - PromiseKit/CorePromise (6.18.1)
+  - PromiseKit/Foundation (6.18.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.18.1):
+    - PromiseKit/CorePromise
   - Wormholy (1.6.6)
 
 DEPENDENCIES:
   - Alamofire (~> 5.6.4)
+  - PromiseKit (~> 6.18.1)
   - Wormholy (~> 1.6.6)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - PromiseKit
     - Wormholy
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  PromiseKit: 49d70c53d5d20e346beaea4b276b5dd2ab446bb4
   Wormholy: 09da0b876f9276031fd47383627cb75e194fc068
 
-PODFILE CHECKSUM: a3eb8e349a18c3dda82854dfbaa408d6144a95d0
+PODFILE CHECKSUM: c744fd8517ae6f73c562356122b909c82adf6f95
 
 COCOAPODS: 1.12.0

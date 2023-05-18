@@ -7,6 +7,7 @@ target 'CoinAPI' do
   
   pod 'Alamofire', '~> 5.6.4'
   pod 'Wormholy', '~> 1.6.6'
+  pod 'PromiseKit', '~> 6.18.1'
   # Pods for CoinAPI
 
   target 'CoinAPITests' do

@@ -1,5 +1,6 @@
 protocol HomeUseCaseProtocol {
     func getExchanges(completion: @escaping (Result<[ExchangesEntity], Error>) -> Void)
+    func getExchangesIcons(completion: @escaping (Result<[IconsEntity], Error>) -> Void)
 }
 
 class HomeUseCase: HomeUseCaseProtocol {
@@ -11,6 +12,17 @@ class HomeUseCase: HomeUseCaseProtocol {
 
     func getExchanges(completion: @escaping (Result<[ExchangesEntity], Error>) -> Void) {
         homeRepository.getExchanges() { result in
+            switch result {
+            case .success(let data):
+                completion(.success(data))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func getExchangesIcons(completion: @escaping (Result<[IconsEntity], Error>) -> Void) {
+        homeRepository.getExchangesIcons() { result in
             switch result {
             case .success(let data):
                 completion(.success(data))

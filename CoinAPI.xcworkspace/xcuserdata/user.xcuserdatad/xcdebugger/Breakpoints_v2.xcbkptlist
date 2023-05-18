@@ -14,8 +14,8 @@
             filePath = "CoinAPI/Data/Repositories/HomeRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "getExchanges(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -23,16 +23,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7F3737F9-0B18-4BE1-91DE-889E39FA8CA8"
-            shouldBeEnabled = "No"
+            uuid = "7E4AF4D1-EB7D-4A8D-9599-E97F2C5B3917"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoinAPI/Presentation/ViewModel/HomeViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "getExchanges()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "859D5903-B736-4B7E-838C-BEE61F8949DE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoinAPI/Domain/Models/ExchangesEntity.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "mapFromIconsData(iconsEntity:exchangesEntity:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -14,6 +14,7 @@ struct ExchangesEntity : Codable {
     let volume1hrsUsd : Double?
     let volume1dayUsd : Double?
     let volume1mthUsd : Double?
+    var icon: String?
 
     enum CodingKeys: String, CodingKey {
         case exchangeId = "exchange_id"
@@ -31,7 +32,45 @@ struct ExchangesEntity : Codable {
         case volume1hrsUsd = "volume_1hrs_usd"
         case volume1dayUsd = "volume_1day_usd"
         case volume1mthUsd = "volume_1mth_usd"
+        case icon = "icon"
     }
+    
+    init(
+            exchangeId: String?,
+            website: String?,
+            name: String?,
+            dataStart: String?,
+            dataEnd: String?,
+            dataQuoteStart: String?,
+            dataQuoteEnd: String?,
+            dataOrderbookStart: String?,
+            dataOrderbookEnd: String?,
+            dataTradeStart: String?,
+            dataTradeEnd: String?,
+            dataSymbolsCount: Int?,
+            volume1hrsUsd: Double?,
+            volume1dayUsd: Double?,
+            volume1mthUsd: Double?,
+            icon: String?
+        ) {
+            self.exchangeId = exchangeId
+            self.website = website
+            self.name = name
+            self.dataStart = dataStart
+            self.dataEnd = dataEnd
+            self.dataQuoteStart = dataQuoteStart
+            self.dataQuoteEnd = dataQuoteEnd
+            self.dataOrderbookStart = dataOrderbookStart
+            self.dataOrderbookEnd = dataOrderbookEnd
+            self.dataTradeStart = dataTradeStart
+            self.dataTradeEnd = dataTradeEnd
+            self.dataSymbolsCount = dataSymbolsCount
+            self.volume1hrsUsd = volume1hrsUsd
+            self.volume1dayUsd = volume1dayUsd
+            self.volume1mthUsd = volume1mthUsd
+            self.icon = icon
+        }
+
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -50,6 +89,34 @@ struct ExchangesEntity : Codable {
         volume1hrsUsd = try values.decodeIfPresent(Double.self, forKey: .volume1hrsUsd)
         volume1dayUsd = try values.decodeIfPresent(Double.self, forKey: .volume1dayUsd)
         volume1mthUsd = try values.decodeIfPresent(Double.self, forKey: .volume1mthUsd)
+        icon = try values.decodeIfPresent(String.self, forKey: .icon)
     }
+}
 
+extension ExchangesEntity {
+    static func mapFromIconsData(iconsEntity: [IconsEntity], exchangesEntity: [ExchangesEntity]) -> [ExchangesEntity] {
+        var exchanges: [ExchangesEntity] = []
+        for (_, element) in exchangesEntity.enumerated() {
+            let exchange = ExchangesEntity(
+                exchangeId: element.exchangeId,
+                website: element.website,
+                name: element.name,
+                dataStart: element.dataStart,
+                dataEnd: element.dataEnd,
+                dataQuoteStart: element.dataQuoteStart,
+                dataQuoteEnd: element.dataQuoteEnd,
+                dataOrderbookStart: element.dataOrderbookStart,
+                dataOrderbookEnd: element.dataOrderbookEnd,
+                dataTradeStart: element.dataTradeStart,
+                dataTradeEnd: element.dataTradeEnd,
+                dataSymbolsCount: element.dataSymbolsCount,
+                volume1hrsUsd: element.volume1hrsUsd,
+                volume1dayUsd: element.volume1dayUsd,
+                volume1mthUsd: element.volume1mthUsd,
+                icon: iconsEntity.first(where: { $0.exchangeId == element.exchangeId })?.url
+            )
+            exchanges.append(exchange)
+        }
+        return exchanges
+    }
 }

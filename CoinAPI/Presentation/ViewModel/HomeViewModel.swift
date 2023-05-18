@@ -1,3 +1,5 @@
+import PromiseKit
+
 protocol HomeViewModelProtocol {
     func getNumberOfRows(index: Int) -> Int
     func getExchangeId(index: Int) -> String
@@ -8,6 +10,7 @@ protocol HomeViewModelProtocol {
 
 class HomeViewModel: HomeViewModelProtocol {
     var exchangesEntity: [ExchangesEntity?]?
+    var iconsEntity: [IconsEntity?]?
     weak var view: HomeViewProtocol?
     private let homeUseCase: HomeUseCaseProtocol
     
@@ -20,16 +23,38 @@ class HomeViewModel: HomeViewModelProtocol {
 extension HomeViewModel {
     func getExchanges() {
         view?.showLoading()
-        homeUseCase.getExchanges() { [weak self] result in
-            self?.view?.hideLoading()
-            switch result {
-            case .success(let data):
-                self?.exchangesEntity = data
-                self?.view?.reloadTableView()
-                break
-            case .failure(let error):
-                self?.view?.showError(message: error.localizedDescription)
+        
+        let exchangesPromise = Promise<[ExchangesEntity]> { seal in
+            homeUseCase.getExchanges { result in
+                switch result {
+                case .success(let exchangesData):
+                    seal.fulfill(exchangesData)
+                case .failure(let error):
+                    seal.reject(error)
+                }
             }
+        }
+        
+        let iconsPromise = Promise<[IconsEntity]> { seal in
+            homeUseCase.getExchangesIcons { result in
+                switch result {
+                case .success(let iconsData):
+                    seal.fulfill(iconsData)
+                case .failure(let error):
+                    seal.reject(error)
+                }
+            }
+        }
+        
+        firstly {
+            when(fulfilled: exchangesPromise, iconsPromise)
+        }.done { (exchangesData: [ExchangesEntity], iconsData: [IconsEntity]) in
+            self.exchangesEntity = ExchangesEntity.mapFromIconsData(iconsEntity: iconsData, exchangesEntity: exchangesData)
+            self.view?.reloadTableView()
+        }.catch { error in
+            self.view?.showError(message: error.localizedDescription)
+        }.finally {
+            self.view?.hideLoading()
         }
     }
 }
