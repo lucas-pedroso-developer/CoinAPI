@@ -80,7 +80,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setupCell(
             title: viewModel?.getExchangeId(index: indexPath.row) ?? String(),
             subtitle: viewModel?.getExchangeName(index: indexPath.row) ?? String(),
-            value: viewModel?.getVolumeDayOne(index: indexPath.row) ?? Double())
+            value: viewModel?.getVolumeDayOne(index: indexPath.row) ?? Double(),
+            icon: viewModel?.getIcon(index: indexPath.row) ?? String())
         return cell
     }
     

@@ -5,10 +5,12 @@ protocol HomeViewModelProtocol {
     func getExchangeId(index: Int) -> String
     func getExchangeName(index: Int) -> String
     func getVolumeDayOne(index: Int) -> Double
+    func getIcon(index: Int) -> String
     func getExchanges()
 }
 
 class HomeViewModel: HomeViewModelProtocol {
+    
     var exchangesEntity: [ExchangesEntity?]?
     var iconsEntity: [IconsEntity?]?
     weak var view: HomeViewProtocol?
@@ -74,5 +76,9 @@ extension HomeViewModel {
     
     func getVolumeDayOne(index: Int) -> Double {
         return exchangesEntity?[index]?.volume1dayUsd ?? Double()
+    }
+    
+    func getIcon(index: Int) -> String {
+        return exchangesEntity?[index]?.icon ?? String()
     }
 }
