@@ -86,7 +86,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        coordinator?.showDetails()
+        coordinator?.showDetails(exchangeEntity: viewModel?.getSelectedExchange(index: indexPath.row))
     }
 }
 

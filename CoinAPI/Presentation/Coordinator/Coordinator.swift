@@ -21,8 +21,9 @@ class AppCoordinator: Coordinator {
         window.makeKeyAndVisible()
     }
     
-    func showDetails() {
-        let viewController = DetailViewController()
+    func showDetails(exchangeEntity: ExchangesEntity?) {
+        guard let exchange = exchangeEntity else { return }
+        let viewController = DetailViewController(exchange: exchange)
         viewController.coordinator = self
         navigationController?.pushViewController(viewController, animated: true)
     }

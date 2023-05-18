@@ -6,7 +6,9 @@ protocol HomeViewModelProtocol {
     func getExchangeName(index: Int) -> String
     func getVolumeDayOne(index: Int) -> Double
     func getIcon(index: Int) -> String
-    func getExchanges()
+    func getSelectedExchange(index: Int) -> ExchangesEntity?
+    func getExchanges() 
+    
 }
 
 class HomeViewModel: HomeViewModelProtocol {
@@ -80,5 +82,9 @@ extension HomeViewModel {
     
     func getIcon(index: Int) -> String {
         return exchangesEntity?[index]?.icon ?? String()
+    }
+    
+    func getSelectedExchange(index: Int) -> ExchangesEntity? {
+        return (exchangesEntity?[index])
     }
 }
