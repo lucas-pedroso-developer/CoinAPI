@@ -16,7 +16,6 @@ class ExchangesCell: UITableViewCell {
     }
     
     func setupCell(title: String, subtitle: String, value: Double) {
-        print(title)
         titleLabel.text = title
         subtitleLabel.text = subtitle
         valueLabel.text = NumberFormatter.formatCurrency(value: value)

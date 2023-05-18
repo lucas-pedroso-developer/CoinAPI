@@ -9,6 +9,7 @@ protocol HomeViewProtocol: AnyObject {
 
 enum Constants: String {
     case title = "COIN API"
+    case cell = "ExchangesCell"
 }
 
 class HomeViewController: UIViewController {
@@ -16,6 +17,7 @@ class HomeViewController: UIViewController {
     var tableView: UITableView!
     var coordinator: AppCoordinator?
     var viewModel: HomeViewModelProtocol?
+    let loaderViewController = LoadingViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,21 +39,24 @@ class HomeViewController: UIViewController {
     
     private func setupNavigationController() {
         self.navigationController?.navigationBar.backgroundColor = .white
-        //self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.black,
             NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)
         ]
-        self.title = "COIN API"
+        self.title = Constants.title.rawValue
     }
     
     private func setuptableView() {
         self.tableView = UITableView(frame: .zero)
-        self.tableView.register(ExchangesCell.self, forCellReuseIdentifier: "ExchangesCell")
+        self.tableView.register(ExchangesCell.self, forCellReuseIdentifier: Constants.cell.rawValue)
         self.tableView.backgroundColor = .clear
         self.tableView.delegate = self
         self.tableView.dataSource = self
         view.addSubview(tableView)
+        configureTableViewConstraints()
+    }
+    
+    private func configureTableViewConstraints() {
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
         self.tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8).isActive = true
         self.tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
@@ -63,7 +68,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60.0
+        return 56.0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,7 +76,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ExchangesCell", for: indexPath) as! ExchangesCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell.rawValue, for: indexPath) as! ExchangesCell
         cell.setupCell(
             title: viewModel?.getExchangeId(index: indexPath.row) ?? String(),
             subtitle: viewModel?.getExchangeName(index: indexPath.row) ?? String(),
@@ -86,11 +91,13 @@ extension HomeViewController: HomeViewProtocol {
     }
     
     func showLoading() {
-        print("show loading")
+        loaderViewController.modalPresentationStyle = .fullScreen
+        present(loaderViewController, animated: false, completion: nil)
+        loaderViewController.startLoading()
     }
     
     func hideLoading() {
-        print("hide loading")
+        loaderViewController.stopLoading()
     }
     
     func showError(message: String) {
