@@ -8,12 +8,13 @@ class HomeRepository: HomeRepositoryProtocol {
 
     let network: HttpGetClient
     
+    
     init(network: HttpGetClient) {
         self.network = network
     }
     
     func getExchanges(completion: @escaping (Result<[ExchangesEntity], HttpError>) -> Void) {
-        network.get() { result in
+        network.get(url: getURL()) { result in
             switch result {
             case .failure(let error):
                 completion(.failure(error))
@@ -27,5 +28,9 @@ class HomeRepository: HomeRepositoryProtocol {
                 }
             }
         }
+    }
+    
+    private func getURL() -> URL? {
+        return APIRoute.url
     }
 }
