@@ -42,6 +42,15 @@ class DetailViewController: UIViewController {
         return view
     }()
     
+    private let websiteLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .blue
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.isUserInteractionEnabled = true
+        return label
+    }()
+    
     init(exchange: ExchangesEntity) {
         self.exchange = exchange
         super.init(nibName: nil, bundle: nil)
@@ -68,6 +77,7 @@ class DetailViewController: UIViewController {
         setupCircleView()
         setupImageView()
         setupLabels()
+        setupWebsiteLabel()
     }
     
     private func setupImageView() {
@@ -117,10 +127,29 @@ class DetailViewController: UIViewController {
         circleView.clipsToBounds = true
     }
     
+    private func setupWebsiteLabel() {
+        view.addSubview(websiteLabel)
+        
+        NSLayoutConstraint.activate([
+            websiteLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            websiteLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+            websiteLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0)
+        ])
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(websiteLabelTapped))
+        websiteLabel.addGestureRecognizer(tapGesture)
+    }
+    
     private func populateData() {
         self.loadImage(icon: exchange.icon ?? "")
         titleLabel.text = exchange.exchangeId
         subtitleLabel.text = exchange.name
+        websiteLabel.text = exchange.website
+    }
+    
+    @objc private func websiteLabelTapped() {
+        guard let website = exchange.website, let url = URL(string: website) else { return }
+        UIApplication.shared.open(url)
     }
     
     private func loadImage(icon: String) {
