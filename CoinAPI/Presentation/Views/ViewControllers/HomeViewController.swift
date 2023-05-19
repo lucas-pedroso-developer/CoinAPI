@@ -21,9 +21,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         setupViews()
         createViewModel()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        view.backgroundColor = .white
     }
     
     func setupViews() {
@@ -34,6 +38,10 @@ class HomeViewController: UIViewController {
     private func createViewModel() {
         let builder = HomeViewModelBuilder()
         viewModel = builder.createViewModel(view: self)
+        getExchanges()
+    }
+    
+    private func getExchanges() {
         viewModel?.getExchanges()
     }
     
@@ -106,6 +114,16 @@ extension HomeViewController: HomeViewProtocol {
     }
     
     func showError(message: String) {
-        print("show error")
+        let errorScreen = ErrorViewController()
+        errorScreen.delegate = self
+        errorScreen.setError(message: message)
+        errorScreen.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(errorScreen, animated: true)
+    }
+}
+
+extension HomeViewController: ErrorViewControllerDelegate {
+    func didTapRefresh() {
+        self.getExchanges()
     }
 }

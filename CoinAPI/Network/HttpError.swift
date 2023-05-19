@@ -30,13 +30,13 @@ extension HttpError: LocalizedError {
         case .noConnectivity:
             return "No connectivity"
         case .unauthorized:
-            return "Unauthorized"
+            return "Unauthorized, verify your access."
         case .badRequest:
-            return "Bad request"
+            return "Bad request, try again later."
         case .serverError:
-            return "Server error"
+            return "Server error, try again later"
         case .forbidden:
-            return "forbidden"
+            return "Forbidden"
         }
     }
 }

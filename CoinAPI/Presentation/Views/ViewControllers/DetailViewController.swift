@@ -42,6 +42,30 @@ class DetailViewController: UIViewController {
         return view
     }()
     
+    private let volumeOneHourLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textColor = .green
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let volumeOneDayLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textColor = .green
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let volumeOneMonthLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textColor = .green
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     private let websiteLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
@@ -105,6 +129,9 @@ class DetailViewController: UIViewController {
     private func setupLabels() {
         view.addSubview(titleLabel)
         view.addSubview(subtitleLabel)
+        view.addSubview(volumeOneHourLabel)
+        view.addSubview(volumeOneDayLabel)
+        view.addSubview(volumeOneMonthLabel)
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: circleView.bottomAnchor, constant: 20),
@@ -112,6 +139,15 @@ class DetailViewController: UIViewController {
             
             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
             subtitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
+            
+            volumeOneHourLabel.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 8),
+            volumeOneHourLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
+            
+            volumeOneDayLabel.topAnchor.constraint(equalTo: volumeOneHourLabel.bottomAnchor, constant: 8),
+            volumeOneDayLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
+            
+            volumeOneMonthLabel.topAnchor.constraint(equalTo: volumeOneDayLabel.bottomAnchor, constant: 8),
+            volumeOneMonthLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
         ])
     }
     
@@ -144,6 +180,9 @@ class DetailViewController: UIViewController {
         self.loadImage(icon: exchange.icon ?? "")
         titleLabel.text = exchange.exchangeId
         subtitleLabel.text = exchange.name
+        volumeOneDayLabel.text = "Volume/hora - " + (NumberFormatter.formatCurrency(value: exchange.volume1hrsUsd ?? Double()) ?? "")
+        volumeOneDayLabel.text = "Volume/dia - " + (NumberFormatter.formatCurrency(value: exchange.volume1dayUsd ?? Double()) ?? "")
+        volumeOneDayLabel.text = "Volume/Mês - " + (NumberFormatter.formatCurrency(value: exchange.volume1mthUsd ?? Double()) ?? "")
         websiteLabel.text = exchange.website
     }
     

@@ -28,12 +28,6 @@ class ExchangesCell: UITableViewCell {
             iconImageView.loadImage(from: url) { [weak self] image in
                 DispatchQueue.main.async {
                     self?.iconImageView.image = image
-                    //                if let image = image {
-                    //                    // A imagem foi carregada com sucesso
-                    //                    // Faça algo com a imagem aqui
-                    //                } else {
-                    //                    // Ocorreu um erro ao carregar a imagem
-                    //                }
                 }
             }
         }
