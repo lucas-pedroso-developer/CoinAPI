@@ -14,7 +14,6 @@ public enum HttpError: Error {
 }
 
 extension HttpError: LocalizedError {
-
     public var errorDescription: String? {
         switch self {
         case .decodeError:
