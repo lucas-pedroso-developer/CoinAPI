@@ -38,6 +38,7 @@
 		CE8F33A12A18065700FC65BD /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33A02A18065700FC65BD /* HomeViewModelTests.swift */; };
 		CE8F33A32A180A7900FC65BD /* ExchangesDataMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33A22A180A7900FC65BD /* ExchangesDataMock.swift */; };
 		CE8F33A52A180D7100FC65BD /* ExchangesIconMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33A42A180D7100FC65BD /* ExchangesIconMock.swift */; };
+		CE8F33A82A184E0B00FC65BD /* HomeUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33A72A184E0B00FC65BD /* HomeUseCaseTests.swift */; };
 		CFBE844D26D12F51BEFB87B2 /* Pods_CoinAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD9332842A4CB5D30FA8C3BB /* Pods_CoinAPITests.framework */; };
 		D144D373C2C66B73D0E5CAD5 /* Pods_CoinAPI_CoinAPIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0073747FE94BDEC6C37E7AF /* Pods_CoinAPI_CoinAPIUITests.framework */; };
 /* End PBXBuildFile section */
@@ -101,6 +102,7 @@
 		CE8F33A02A18065700FC65BD /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		CE8F33A22A180A7900FC65BD /* ExchangesDataMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangesDataMock.swift; sourceTree = "<group>"; };
 		CE8F33A42A180D7100FC65BD /* ExchangesIconMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangesIconMock.swift; sourceTree = "<group>"; };
+		CE8F33A72A184E0B00FC65BD /* HomeUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCaseTests.swift; sourceTree = "<group>"; };
 		E0073747FE94BDEC6C37E7AF /* Pods_CoinAPI_CoinAPIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinAPI_CoinAPIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB1C51B428B219EFEA7B8F1 /* Pods-CoinAPI-CoinAPIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinAPI-CoinAPIUITests.release.xcconfig"; path = "Target Support Files/Pods-CoinAPI-CoinAPIUITests/Pods-CoinAPI-CoinAPIUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +202,7 @@
 			children = (
 				CE8F334A2A13D40B00FC65BD /* CoinAPITests.swift */,
 				CE8F33A02A18065700FC65BD /* HomeViewModelTests.swift */,
+				CE8F33A72A184E0B00FC65BD /* HomeUseCaseTests.swift */,
 				CE8F33A22A180A7900FC65BD /* ExchangesDataMock.swift */,
 				CE8F33A42A180D7100FC65BD /* ExchangesIconMock.swift */,
 			);
@@ -625,6 +628,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8F33A82A184E0B00FC65BD /* HomeUseCaseTests.swift in Sources */,
 				CE8F334B2A13D40B00FC65BD /* CoinAPITests.swift in Sources */,
 				CE8F33A32A180A7900FC65BD /* ExchangesDataMock.swift in Sources */,
 				CE8F33A12A18065700FC65BD /* HomeViewModelTests.swift in Sources */,

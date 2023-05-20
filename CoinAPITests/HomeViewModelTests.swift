@@ -121,9 +121,9 @@ class MockHomeView: HomeViewProtocol {
 }
 
 class MockHomeUseCase: HomeUseCaseProtocol {
-    func getExchanges(completion: @escaping (Swift.Result<[ExchangesEntity], Error>) -> Void) {}
+    func getExchanges(completion: @escaping (Swift.Result<[ExchangesEntity], HttpError>) -> Void) {}
     
-    func getExchangesIcons(completion: @escaping (Swift.Result<[IconsEntity], Error>) -> Void) {}
+    func getExchangesIcons(completion: @escaping (Swift.Result<[IconsEntity], HttpError>) -> Void) {}
 }
 
 enum MockError: Error {
