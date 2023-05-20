@@ -180,9 +180,9 @@ class DetailViewController: UIViewController {
         self.loadImage(icon: exchange.icon ?? "")
         titleLabel.text = exchange.exchangeId
         subtitleLabel.text = exchange.name
-        volumeOneDayLabel.text = "Volume/hora - " + (NumberFormatter.formatCurrency(value: exchange.volume1hrsUsd ?? Double()) ?? "")
+        volumeOneHourLabel.text = "Volume/hora - " + (NumberFormatter.formatCurrency(value: exchange.volume1hrsUsd ?? Double()) ?? "")
         volumeOneDayLabel.text = "Volume/dia - " + (NumberFormatter.formatCurrency(value: exchange.volume1dayUsd ?? Double()) ?? "")
-        volumeOneDayLabel.text = "Volume/Mês - " + (NumberFormatter.formatCurrency(value: exchange.volume1mthUsd ?? Double()) ?? "")
+        volumeOneMonthLabel.text = "Volume/Mês - " + (NumberFormatter.formatCurrency(value: exchange.volume1mthUsd ?? Double()) ?? "")
         websiteLabel.text = exchange.website
     }
     
