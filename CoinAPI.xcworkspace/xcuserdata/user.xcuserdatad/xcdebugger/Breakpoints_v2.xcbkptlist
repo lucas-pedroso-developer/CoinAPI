@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "7684EE2D-C35C-403C-8BAE-2D51F916C917"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoinAPI/Data/Repositories/HomeRepository.swift"
@@ -290,6 +290,84 @@
             endingLineNumber = "54"
             landmarkName = "getExchanges()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC7E9193-4E8B-4EF1-86D6-4FFC98F7A62E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoinAPITests/HomeRepositoryTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "testGetExchanges_Failure()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CC7E9193-4E8B-4EF1-86D6-4FFC98F7A62E - 6d1d0d25a4f4039a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;CoinAPI.ExchangesEntity&gt;, CoinAPI.HttpError&gt;) -&gt; () in CoinAPITests.HomeRepositoryTests.testGetExchanges_Failure() -&gt; ()"
+                  moduleName = "CoinAPITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Desktop/Manguinho/CoinAPI/CoinAPITests/HomeRepositoryTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "CC7E9193-4E8B-4EF1-86D6-4FFC98F7A62E - 6d1d0d25a4f403f9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;CoinAPI.ExchangesEntity&gt;, CoinAPI.HttpError&gt;) -&gt; () in CoinAPITests.HomeRepositoryTests.testGetExchanges_Failure() -&gt; ()"
+                  moduleName = "CoinAPITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Desktop/Manguinho/CoinAPI/CoinAPITests/HomeRepositoryTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "CC7E9193-4E8B-4EF1-86D6-4FFC98F7A62E - 6d1d0d25a4f403f9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;CoinAPI.ExchangesEntity&gt;, CoinAPI.HttpError&gt;) -&gt; () in CoinAPITests.HomeRepositoryTests.testGetExchanges_Failure() -&gt; ()"
+                  moduleName = "CoinAPITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Desktop/Manguinho/CoinAPI/CoinAPITests/HomeRepositoryTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "CC7E9193-4E8B-4EF1-86D6-4FFC98F7A62E - 6d1d0d25a4f4033f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;CoinAPI.ExchangesEntity&gt;, CoinAPI.HttpError&gt;) -&gt; () in CoinAPITests.HomeRepositoryTests.testGetExchanges_Failure() -&gt; ()"
+                  moduleName = "CoinAPITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Desktop/Manguinho/CoinAPI/CoinAPITests/HomeRepositoryTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
