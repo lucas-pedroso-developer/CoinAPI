@@ -44,14 +44,12 @@ class HomeUseCaseTests: XCTestCase {
     }
 
     func testGetExchanges_Failure() {
-        // Prepare
         let expectedError: HttpError = .networkError // Defina o erro esperado
         
         mockRepository.getExchangesHandler = { completion in
             completion(.failure(expectedError))
         }
         
-        // Execute
         var actualError: HttpError?
         let expectation = self.expectation(description: "getExchanges")
         
@@ -65,7 +63,6 @@ class HomeUseCaseTests: XCTestCase {
             expectation.fulfill()
         }
         
-        // Verify
         waitForExpectations(timeout: 1.0, handler: nil)
         XCTAssertEqual(actualError, expectedError)
     }
@@ -76,7 +73,6 @@ class HomeUseCaseTests: XCTestCase {
         
         mockRepository.getExchangesIconsHandler = { completion in
             completion(.success(expectedIcons))
-            //return .success(expectedIcons)
         }
         
         var actualIcons: [IconsEntity]?
