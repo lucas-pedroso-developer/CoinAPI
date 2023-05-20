@@ -8,6 +8,6 @@ enum APIRoute {
         return URL(string: "https://rest.coinapi.io/v1/exchanges/icons/512")
     }
     static var apiKey: String {
-        return "1D19140B-BF5D-4AAF-A931-092D8C162D4A"
+        return "7B5F5C8F-0F6E-463E-924D-C4797FAD71F3"
     }
 }
