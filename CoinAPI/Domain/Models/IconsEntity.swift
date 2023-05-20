@@ -1,4 +1,4 @@
-struct IconsEntity: Codable {
+struct IconsEntity: Codable, Equatable {
     let exchangeId: String?
     let url: String?
     
