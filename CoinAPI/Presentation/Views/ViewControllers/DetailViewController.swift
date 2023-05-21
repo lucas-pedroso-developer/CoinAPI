@@ -1,5 +1,11 @@
 import UIKit
 
+enum DetailConstants: String {
+    case volumeHour = "Volume/hora"
+    case volumeDay = "Volume/dia"
+    case volumeMonth = "Volume/mês"
+}
+
 class DetailViewController: UIViewController {
     
     var coordinator: Coordinator?
@@ -182,12 +188,12 @@ class DetailViewController: UIViewController {
     }
     
     private func populateData() {
-        self.loadImage(icon: exchange.icon ?? "")
+        self.loadImage(icon: exchange.icon ?? String())
         titleLabel.text = exchange.exchangeId
         subtitleLabel.text = exchange.name
-        volumeOneHourLabel.text = "Volume/hora - " + (NumberFormatter.formatCurrency(value: exchange.volume1hrsUsd ?? Double()) ?? "")
-        volumeOneDayLabel.text = "Volume/dia - " + (NumberFormatter.formatCurrency(value: exchange.volume1dayUsd ?? Double()) ?? "")
-        volumeOneMonthLabel.text = "Volume/Mês - " + (NumberFormatter.formatCurrency(value: exchange.volume1mthUsd ?? Double()) ?? "")
+        volumeOneHourLabel.text = DetailConstants.volumeHour.rawValue + " - " + (NumberFormatter.formatCurrency(value: exchange.volume1hrsUsd ?? Double()) ?? String())
+        volumeOneDayLabel.text = DetailConstants.volumeDay.rawValue + " - " + (NumberFormatter.formatCurrency(value: exchange.volume1dayUsd ?? Double()) ?? String())
+        volumeOneMonthLabel.text = DetailConstants.volumeMonth.rawValue + " - " + (NumberFormatter.formatCurrency(value: exchange.volume1mthUsd ?? Double()) ?? String())
         websiteLabel.text = exchange.website
     }
     
@@ -197,6 +203,7 @@ class DetailViewController: UIViewController {
     }
     
     private func loadImage(icon: String) {
+        self.iconImageView.image = UIImage(named: "no-image")
         if let url = URL(string: icon) {
             iconImageView.loadImage(from: url) { [weak self] image in
                 DispatchQueue.main.async {

@@ -24,10 +24,12 @@ class ExchangesCell: UITableViewCell {
     }
     
     private func loadImage(icon: String) {
+        self.iconImageView.image = UIImage(named: "no-image")
         if let url = URL(string: icon) {
             iconImageView.loadImage(from: url) { [weak self] image in
                 DispatchQueue.main.async {
                     self?.iconImageView.image = image
+                    return
                 }
             }
         }
