@@ -18,13 +18,13 @@ extension HttpError: LocalizedError {
         case .decodeError:
             return "Error during data decoding"
         case .noData:
-            return "Data error"
+            return "No data returned"
         case .invalidURL:
-            return "Invalid URL"
+            return "Invalid url, verify the url"
         case .networkError:
             return "An error has occurred. Please verify your connection."
         case .noConnectivity:
-            return "No connectivity"
+            return "No connectivity. Verify your internet"
         case .unauthorized:
             return "Unauthorized, verify your access."
         case .badRequest:
@@ -32,7 +32,7 @@ extension HttpError: LocalizedError {
         case .serverError:
             return "Server error, try again later"
         case .forbidden:
-            return "Forbidden"
+            return "Forbidden, try again later"
         }
     }
 }

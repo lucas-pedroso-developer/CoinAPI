@@ -15,7 +15,7 @@ enum Constants: String {
 class HomeViewController: UIViewController {
     
     var tableView: UITableView!
-    var coordinator: AppCoordinator?
+    var detailCoordinator: DetailCoordinator?
     var viewModel: HomeViewModelProtocol?
     var loaderViewController = LoadingViewController()
     
@@ -94,7 +94,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        coordinator?.showDetails(exchangeEntity: viewModel?.getSelectedExchange(index: indexPath.row))
+        guard let selectedExchange = viewModel?.getSelectedExchange(index: indexPath.row) else { return }
+        let detailCoordinator = DetailCoordinator(navigationController: navigationController ?? UINavigationController(), exchange: selectedExchange)
+        detailCoordinator.start()
     }
 }
 

@@ -8,7 +8,6 @@ enum DetailConstants: String {
 
 class DetailViewController: UIViewController {
     
-    var coordinator: Coordinator?
     private let exchange: ExchangesEntity
     
     private let iconImageView: UIImageView = {

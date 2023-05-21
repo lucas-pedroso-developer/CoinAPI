@@ -18,7 +18,6 @@
 		CE8F33552A13D40B00FC65BD /* CoinAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33542A13D40B00FC65BD /* CoinAPIUITests.swift */; };
 		CE8F33572A13D40B00FC65BD /* CoinAPIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33562A13D40B00FC65BD /* CoinAPIUITestsLaunchTests.swift */; };
 		CE8F33642A13D62500FC65BD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33632A13D62500FC65BD /* HomeViewController.swift */; };
-		CE8F33672A13D6F400FC65BD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33662A13D6F400FC65BD /* Coordinator.swift */; };
 		CE8F336B2A13F1D500FC65BD /* AlamofireAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F336A2A13F1D500FC65BD /* AlamofireAdapter.swift */; };
 		CE8F336D2A13F22800FC65BD /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F336C2A13F22800FC65BD /* HttpError.swift */; };
 		CE8F33702A13FC7100FC65BD /* ExchangesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F336F2A13FC7100FC65BD /* ExchangesEntity.swift */; };
@@ -43,6 +42,12 @@
 		CE8F33A82A184E0B00FC65BD /* HomeUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33A72A184E0B00FC65BD /* HomeUseCaseTests.swift */; };
 		CEF2BDEC2A1A506B00433921 /* SnapshotViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2BDEB2A1A506B00433921 /* SnapshotViewTests.swift */; };
 		CEF2BDEE2A1A5CEF00433921 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2BDED2A1A5CEF00433921 /* HomeViewControllerTests.swift */; };
+		CEF2BDF22A1A9B1F00433921 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEF2BDF12A1A9B1F00433921 /* APIKey.plist */; };
+		CEF2BDF42A1A9DE900433921 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2BDF32A1A9DE900433921 /* LaunchScreenViewController.swift */; };
+		CEF2BDF62A1AA22100433921 /* LaunchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2BDF52A1AA22100433921 /* LaunchCoordinator.swift */; };
+		CEF2BDF82A1AA24900433921 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2BDF72A1AA24900433921 /* HomeCoordinator.swift */; };
+		CEF2BDFA2A1AA3B400433921 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2BDF92A1AA3B400433921 /* DetailCoordinator.swift */; };
+		CEF2BDFC2A1AAA6B00433921 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2BDFB2A1AAA6B00433921 /* Coordinator.swift */; };
 		EA0C06333F13094A8986A4F0 /* Pods_CoinAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5B8AD016C4D2B0916F0885 /* Pods_CoinAPITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,7 +90,6 @@
 		CE8F33542A13D40B00FC65BD /* CoinAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAPIUITests.swift; sourceTree = "<group>"; };
 		CE8F33562A13D40B00FC65BD /* CoinAPIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAPIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE8F33632A13D62500FC65BD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		CE8F33662A13D6F400FC65BD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CE8F336A2A13F1D500FC65BD /* AlamofireAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapter.swift; sourceTree = "<group>"; };
 		CE8F336C2A13F22800FC65BD /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		CE8F336F2A13FC7100FC65BD /* ExchangesEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangesEntity.swift; sourceTree = "<group>"; };
@@ -110,6 +114,12 @@
 		CE8F33A72A184E0B00FC65BD /* HomeUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCaseTests.swift; sourceTree = "<group>"; };
 		CEF2BDEB2A1A506B00433921 /* SnapshotViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotViewTests.swift; sourceTree = "<group>"; };
 		CEF2BDED2A1A5CEF00433921 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
+		CEF2BDF12A1A9B1F00433921 /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
+		CEF2BDF32A1A9DE900433921 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		CEF2BDF52A1AA22100433921 /* LaunchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCoordinator.swift; sourceTree = "<group>"; };
+		CEF2BDF72A1AA24900433921 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		CEF2BDF92A1AA3B400433921 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
+		CEF2BDFB2A1AAA6B00433921 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D3BBACCB13EC773F9CF23B19 /* Pods_CoinAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -189,6 +199,7 @@
 				CE8F333C2A13D40B00FC65BD /* Assets.xcassets */,
 				CE8F333E2A13D40B00FC65BD /* LaunchScreen.storyboard */,
 				CE8F33412A13D40B00FC65BD /* Info.plist */,
+				CEF2BDF12A1A9B1F00433921 /* APIKey.plist */,
 			);
 			path = CoinAPI;
 			sourceTree = "<group>";
@@ -230,7 +241,10 @@
 		CE8F33682A13D71A00FC65BD /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				CE8F33662A13D6F400FC65BD /* Coordinator.swift */,
+				CEF2BDF52A1AA22100433921 /* LaunchCoordinator.swift */,
+				CEF2BDF72A1AA24900433921 /* HomeCoordinator.swift */,
+				CEF2BDF92A1AA3B400433921 /* DetailCoordinator.swift */,
+				CEF2BDFB2A1AAA6B00433921 /* Coordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -327,6 +341,7 @@
 			children = (
 				CE8F33632A13D62500FC65BD /* HomeViewController.swift */,
 				CE8F33942A165A9B00FC65BD /* DetailViewController.swift */,
+				CEF2BDF32A1A9DE900433921 /* LaunchScreenViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -480,6 +495,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF2BDF22A1A9B1F00433921 /* APIKey.plist in Resources */,
 				CE8F33402A13D40B00FC65BD /* LaunchScreen.storyboard in Resources */,
 				CE8F333D2A13D40B00FC65BD /* Assets.xcassets in Resources */,
 			);
@@ -626,12 +642,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE8F33672A13D6F400FC65BD /* Coordinator.swift in Sources */,
+				CEF2BDF42A1A9DE900433921 /* LaunchScreenViewController.swift in Sources */,
 				CE8F33952A165A9B00FC65BD /* DetailViewController.swift in Sources */,
+				CEF2BDFC2A1AAA6B00433921 /* Coordinator.swift in Sources */,
+				CEF2BDFA2A1AA3B400433921 /* DetailCoordinator.swift in Sources */,
 				CE8F33702A13FC7100FC65BD /* ExchangesEntity.swift in Sources */,
 				CE8F338E2A1529F700FC65BD /* Double+Extension.swift in Sources */,
 				CE8F336B2A13F1D500FC65BD /* AlamofireAdapter.swift in Sources */,
 				CE8F33812A14280500FC65BD /* HomeViewModelBuilder.swift in Sources */,
+				CEF2BDF82A1AA24900433921 /* HomeCoordinator.swift in Sources */,
 				CE8F338A2A15285000FC65BD /* ExchangesCell.swift in Sources */,
 				CE8F339D2A17C2A400FC65BD /* ErrorViewController.swift in Sources */,
 				CE8F33722A1409D700FC65BD /* HomeViewModel.swift in Sources */,
@@ -642,6 +661,7 @@
 				CE8F33342A13D40700FC65BD /* AppDelegate.swift in Sources */,
 				CE8F336D2A13F22800FC65BD /* HttpError.swift in Sources */,
 				CE8F33362A13D40700FC65BD /* SceneDelegate.swift in Sources */,
+				CEF2BDF62A1AA22100433921 /* LaunchCoordinator.swift in Sources */,
 				CE8F33642A13D62500FC65BD /* HomeViewController.swift in Sources */,
 				CE8F33972A1694D900FC65BD /* IconsEntity.swift in Sources */,
 				CE8F33992A16C03D00FC65BD /* UIImageView+Extension.swift in Sources */,

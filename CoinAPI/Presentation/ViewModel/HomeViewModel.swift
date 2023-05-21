@@ -91,6 +91,7 @@ extension HomeViewModel {
     }
     
     func getSelectedExchange(index: Int) -> ExchangesEntity? {
-        return (exchangesEntity?[index])
+        guard let exchange = exchangesEntity?[index] else { return nil }
+        return exchange
     }
 }
