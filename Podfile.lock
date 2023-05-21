@@ -1,0 +1,36 @@
+PODS:
+  - Alamofire (5.6.4)
+  - PromiseKit (6.18.1):
+    - PromiseKit/CorePromise (= 6.18.1)
+    - PromiseKit/Foundation (= 6.18.1)
+    - PromiseKit/UIKit (= 6.18.1)
+  - PromiseKit/CorePromise (6.18.1)
+  - PromiseKit/Foundation (6.18.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.18.1):
+    - PromiseKit/CorePromise
+  - SnapshotTesting (1.9.0)
+  - Wormholy (1.6.6)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.6.4)
+  - PromiseKit (~> 6.18.1)
+  - SnapshotTesting (~> 1.9.0)
+  - Wormholy (~> 1.6.6)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - PromiseKit
+    - SnapshotTesting
+    - Wormholy
+
+SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  PromiseKit: 49d70c53d5d20e346beaea4b276b5dd2ab446bb4
+  SnapshotTesting: 6141c48b6aa76ead61431ca665c14ab9a066c53b
+  Wormholy: 09da0b876f9276031fd47383627cb75e194fc068
+
+PODFILE CHECKSUM: 1c8a867cfab83c998984e6507ee7c37331f8d48c
+
+COCOAPODS: 1.12.0

@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  CoinAPI
-//
-//  Created by user on 16/05/23.
-//
-
 import UIKit
 
 @main
