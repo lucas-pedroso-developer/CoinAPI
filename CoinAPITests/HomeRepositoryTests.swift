@@ -109,7 +109,7 @@ extension HomeRepositoryTests {
     }
     
     func getExchangeIconMock() -> [IconsEntity] {
-        let JSON = getExchangesDataJSON()
+        let JSON = getExchangesIconJSON()
         let jsonData = JSON.data(using: .utf8)!
         return try! JSONDecoder().decode([IconsEntity].self, from: jsonData)
     }
