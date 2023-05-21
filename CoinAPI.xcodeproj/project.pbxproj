@@ -42,6 +42,7 @@
 		CE8F33A52A180D7100FC65BD /* ExchangesIconMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33A42A180D7100FC65BD /* ExchangesIconMock.swift */; };
 		CE8F33A82A184E0B00FC65BD /* HomeUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33A72A184E0B00FC65BD /* HomeUseCaseTests.swift */; };
 		CEF2BDEC2A1A506B00433921 /* SnapshotViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2BDEB2A1A506B00433921 /* SnapshotViewTests.swift */; };
+		CEF2BDEE2A1A5CEF00433921 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2BDED2A1A5CEF00433921 /* HomeViewControllerTests.swift */; };
 		EA0C06333F13094A8986A4F0 /* Pods_CoinAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A5B8AD016C4D2B0916F0885 /* Pods_CoinAPITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,7 @@
 		CE8F33A42A180D7100FC65BD /* ExchangesIconMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangesIconMock.swift; sourceTree = "<group>"; };
 		CE8F33A72A184E0B00FC65BD /* HomeUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCaseTests.swift; sourceTree = "<group>"; };
 		CEF2BDEB2A1A506B00433921 /* SnapshotViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotViewTests.swift; sourceTree = "<group>"; };
+		CEF2BDED2A1A5CEF00433921 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 		D3BBACCB13EC773F9CF23B19 /* Pods_CoinAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -201,6 +203,7 @@
 				CE8F33A22A180A7900FC65BD /* ExchangesDataMock.swift */,
 				CE8F33A42A180D7100FC65BD /* ExchangesIconMock.swift */,
 				CEF2BDEB2A1A506B00433921 /* SnapshotViewTests.swift */,
+				CEF2BDED2A1A5CEF00433921 /* HomeViewControllerTests.swift */,
 			);
 			path = CoinAPITests;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				CEF2BDEC2A1A506B00433921 /* SnapshotViewTests.swift in Sources */,
 				CE09BAC02A190E6E00823CED /* HomeRepositoryTests.swift in Sources */,
 				CE8F33A82A184E0B00FC65BD /* HomeUseCaseTests.swift in Sources */,
+				CEF2BDEE2A1A5CEF00433921 /* HomeViewControllerTests.swift in Sources */,
 				CE8F334B2A13D40B00FC65BD /* CoinAPITests.swift in Sources */,
 				CE8F33A32A180A7900FC65BD /* ExchangesDataMock.swift in Sources */,
 				CE8F33A12A18065700FC65BD /* HomeViewModelTests.swift in Sources */,

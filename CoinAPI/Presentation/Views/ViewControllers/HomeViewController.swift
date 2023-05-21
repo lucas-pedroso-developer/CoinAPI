@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     var tableView: UITableView!
     var coordinator: AppCoordinator?
     var viewModel: HomeViewModelProtocol?
-    let loaderViewController = LoadingViewController()
+    var loaderViewController = LoadingViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ class HomeViewController: UIViewController {
         getExchanges()
     }
     
-    private func getExchanges() {
+    func getExchanges() {
         viewModel?.getExchanges()
     }
     
@@ -84,7 +84,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell.rawValue, for: indexPath) as! ExchangesCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell.rawValue, for: indexPath) as? ExchangesCell else { return UITableViewCell() }
         cell.setupCell(
             title: viewModel?.getExchangeId(index: indexPath.row) ?? String(),
             subtitle: viewModel?.getExchangeName(index: indexPath.row) ?? String(),
