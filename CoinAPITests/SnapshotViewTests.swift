@@ -11,7 +11,7 @@ class SnapshotHomeViewControllerTests: XCTestCase {
     
     func test_DetailViewController() {
         let viewController = DetailViewController(exchange: getExchangeDataMock())
-        assertSnapshot(matching: viewController, as: .image)
+        assertSnapshot(matching: viewController, as: .image, record: false)
     }
     
     func test_HomeTableViewCell() {
@@ -21,7 +21,7 @@ class SnapshotHomeViewControllerTests: XCTestCase {
                        subtitle: "BINANCE",
                        value: 7265142962.90,
                        icon: "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_32/74eaad903814407ebdfc3828fe5318ba.png")
-        assertSnapshot(matching: cell, as: .image)
+        assertSnapshot(matching: cell, as: .image, record: false)
     }
 }
 

@@ -208,13 +208,13 @@
 			isa = PBXGroup;
 			children = (
 				CE8F334A2A13D40B00FC65BD /* CoinAPITests.swift */,
+				CEF2BDED2A1A5CEF00433921 /* HomeViewControllerTests.swift */,
 				CE8F33A02A18065700FC65BD /* HomeViewModelTests.swift */,
 				CE8F33A72A184E0B00FC65BD /* HomeUseCaseTests.swift */,
 				CE09BABF2A190E6E00823CED /* HomeRepositoryTests.swift */,
 				CE8F33A22A180A7900FC65BD /* ExchangesDataMock.swift */,
 				CE8F33A42A180D7100FC65BD /* ExchangesIconMock.swift */,
 				CEF2BDEB2A1A506B00433921 /* SnapshotViewTests.swift */,
-				CEF2BDED2A1A5CEF00433921 /* HomeViewControllerTests.swift */,
 			);
 			path = CoinAPITests;
 			sourceTree = "<group>";

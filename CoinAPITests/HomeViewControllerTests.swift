@@ -4,7 +4,7 @@ import XCTest
 class HomeViewControllerTests: XCTestCase {
     
     var viewController: HomeViewController!
-    var coordinatorMock: AppCoordinatorMock!
+    var coordinatorMock: DetailCoordinatorMock!
     var viewModelMock: HomeViewModelProtocolMock!
     var tableViewMock: UITableViewMock!
     var loaderViewControllerMock: LoadingViewControllerMock!
@@ -12,12 +12,12 @@ class HomeViewControllerTests: XCTestCase {
     override func setUp() {
         super.setUp()
         viewController = HomeViewController()
-        coordinatorMock = AppCoordinatorMock(window: UIWindow(frame: UIScreen.main.bounds))
+        coordinatorMock = DetailCoordinatorMock(navigationController: viewController.navigationController ?? UINavigationController(), exchange: getSelectedExchange(index: 0))
         viewModelMock = HomeViewModelProtocolMock()
         tableViewMock = UITableViewMock()
         loaderViewControllerMock = LoadingViewControllerMock()
         
-        viewController.coordinator = coordinatorMock
+        viewController.detailCoordinator = coordinatorMock
         viewController.viewModel = viewModelMock
         viewController.tableView = tableViewMock
         viewController.loaderViewController = loaderViewControllerMock
@@ -30,6 +30,10 @@ class HomeViewControllerTests: XCTestCase {
         tableViewMock = nil
         loaderViewControllerMock = nil
         super.tearDown()
+    }
+    
+    private func getSelectedExchange(index: Int) -> ExchangesEntity {
+        return ExchangesEntity(exchangeId: "", website: "", name: "", dataStart: "", dataEnd: "", dataQuoteStart: "", dataQuoteEnd: "", dataOrderbookStart: "", dataOrderbookEnd: "", dataTradeStart: "", dataTradeEnd: "", dataSymbolsCount: 0, volume1hrsUsd: 0.0, volume1dayUsd: 0.0, volume1mthUsd: 0.0, icon: "")
     }
     
     func testViewDidLoad() {
@@ -61,15 +65,19 @@ class HomeViewControllerTests: XCTestCase {
         viewController.didTapRefresh()
         XCTAssertTrue(viewModelMock.didCallGetExchanges)
     }
+    
+    func testDetailCoordinatorCallShowDetails() {
+        coordinatorMock.start()
+        XCTAssertTrue(coordinatorMock.didCallShowDetails)
+    }
 }
 
-class AppCoordinatorMock: AppCoordinator {
+class DetailCoordinatorMock: DetailCoordinator {
     var didCallShowDetails = false
     var exchangeEntity: ExchangesEntity?
     
-    override func showDetails(exchangeEntity: ExchangesEntity?) {
+    override func start() {
         didCallShowDetails = true
-        self.exchangeEntity = exchangeEntity
     }
 }
 
