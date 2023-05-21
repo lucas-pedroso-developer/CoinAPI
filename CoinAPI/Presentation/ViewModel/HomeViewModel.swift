@@ -8,7 +8,6 @@ protocol HomeViewModelProtocol {
     func getIcon(index: Int) -> String
     func getSelectedExchange(index: Int) -> ExchangesEntity?
     func getExchanges() 
-    
 }
 
 class HomeViewModel: HomeViewModelProtocol {

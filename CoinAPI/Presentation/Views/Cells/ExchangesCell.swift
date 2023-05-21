@@ -1,4 +1,5 @@
 import UIKit
+import QuartzCore
 
 class ExchangesCell: UITableViewCell {
     
@@ -10,6 +11,7 @@ class ExchangesCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCellLayout()
+        animateCellOnLoad()
     }
     
     required init?(coder: NSCoder) {
@@ -37,6 +39,14 @@ class ExchangesCell: UITableViewCell {
     
     private func setupImageView() {
         iconImageView.contentMode = .scaleAspectFit
+    }
+    
+    private func animateCellOnLoad() {
+        let animation = CABasicAnimation(keyPath: "opacity")
+        animation.fromValue = 0.0
+        animation.toValue = 1.0
+        animation.duration = 1
+        layer.add(animation, forKey: "cellLoadAnimation")
     }
     
     private func setupCellLayout() {
