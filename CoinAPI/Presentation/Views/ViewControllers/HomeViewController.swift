@@ -85,6 +85,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell.rawValue, for: indexPath) as? ExchangesCell else { return UITableViewCell() }
+        cell.selectionStyle = .none
         cell.setupCell(
             title: viewModel?.getExchangeId(index: indexPath.row) ?? String(),
             subtitle: viewModel?.getExchangeName(index: indexPath.row) ?? String(),
