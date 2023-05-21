@@ -102,6 +102,11 @@ class DetailViewController: UIViewController {
         setupImageView()
         setupLabels()
         setupWebsiteLabel()
+        setupNavBarTitle()
+    }
+    
+    private func setupNavBarTitle() {
+        self.title = "DETAIL"
     }
     
     private func setupImageView() {

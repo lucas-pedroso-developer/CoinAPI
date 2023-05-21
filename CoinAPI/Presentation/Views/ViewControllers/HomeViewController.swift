@@ -8,7 +8,7 @@ protocol HomeViewProtocol: AnyObject {
 }
 
 enum Constants: String {
-    case title = "COIN API"
+    case title = "HOME"
     case cell = "ExchangesCell"
 }
 
