@@ -56,7 +56,13 @@ extension HomeViewModel {
             self.exchangesEntity = ExchangesEntity.mapFromIconsData(iconsEntity: iconsData, exchangesEntity: exchangesData)
             self.view?.reloadTableView()
         }.catch { error in
-            self.view?.showError(message: error.localizedDescription)
+            let errorMessage: String
+            if let customError = error as? HttpError {
+                errorMessage = customError.localizedDescription
+            } else {
+                errorMessage = "Failed to fetch exchanges"
+            }
+            self.view?.showError(message: errorMessage)
         }.finally {
             self.view?.hideLoading()
         }

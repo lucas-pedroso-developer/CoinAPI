@@ -1,9 +1,9 @@
 import UIKit
 
 enum DetailConstants: String {
-    case volumeHour = "Volume/hora"
-    case volumeDay = "Volume/dia"
-    case volumeMonth = "Volume/mês"
+    case volumeHour = "Volume/hour"
+    case volumeDay = "Volume/day"
+    case volumeMonth = "Volume/month"
 }
 
 class DetailViewController: UIViewController {

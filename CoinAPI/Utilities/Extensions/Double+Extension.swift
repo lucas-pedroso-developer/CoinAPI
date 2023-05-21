@@ -4,7 +4,7 @@ extension NumberFormatter {
     static let currencyFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
-        formatter.locale = Locale.current
+        formatter.locale = Locale(identifier: "en_US")
         return formatter
     }()
 

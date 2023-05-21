@@ -12,7 +12,6 @@ public final class AlamofireAdapter: HttpGetClient {
         self.session = session
     }
     
-    
     /// Performs a GET request to the specified URL and returns the result via a completion block.
     /// - Parameters:
     ///   - url: The URL to which the GET request will be made.
