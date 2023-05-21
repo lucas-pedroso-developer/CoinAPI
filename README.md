@@ -6,6 +6,11 @@
 
 > Projeto em Swift que lista exchanges e exibe detalhes de cada exchange utilizando a CoinAPI.
 
+##Screenshot
+
+![Imagem](https://github.com/lucas-pedroso-developer/CoinAPI/blob/main/HomeScreenshot.png)
+
+
 ## Descrição
 
 O CoinAPI Project é um aplicativo iOS que permite aos usuários visualizar uma lista de exchanges e obter informações detalhadas sobre cada uma delas. O projeto utiliza a API CoinAPI para obter os dados das exchanges e segue a arquitetura MVVM-C (Model-View-ViewModel-Coordinator), juntamente com os padrões de design Builder, Adapter e Coordinator.
