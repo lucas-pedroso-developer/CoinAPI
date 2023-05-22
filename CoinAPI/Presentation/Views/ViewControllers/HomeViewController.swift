@@ -36,8 +36,8 @@ class HomeViewController: UIViewController {
     }
     
     private func createViewModel() {
-        let builder = HomeViewModelBuilder()
-        viewModel = builder.createViewModel(view: self)
+        let dependencies = HomeViewModelConfigurator.Dependencies(view: self)
+        viewModel = HomeViewModelConfigurator.make(with: dependencies)
         getExchanges()
     }
     
