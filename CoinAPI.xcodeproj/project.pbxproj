@@ -40,6 +40,7 @@
 		CE8F33A32A180A7900FC65BD /* ExchangesDataMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33A22A180A7900FC65BD /* ExchangesDataMock.swift */; };
 		CE8F33A52A180D7100FC65BD /* ExchangesIconMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33A42A180D7100FC65BD /* ExchangesIconMock.swift */; };
 		CE8F33A82A184E0B00FC65BD /* HomeUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33A72A184E0B00FC65BD /* HomeUseCaseTests.swift */; };
+		CEAF61182A1BD8B4008D0019 /* FeatureFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF61172A1BD8B4008D0019 /* FeatureFactory.swift */; };
 		CEF2BDEC2A1A506B00433921 /* SnapshotViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2BDEB2A1A506B00433921 /* SnapshotViewTests.swift */; };
 		CEF2BDEE2A1A5CEF00433921 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2BDED2A1A5CEF00433921 /* HomeViewControllerTests.swift */; };
 		CEF2BDF22A1A9B1F00433921 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEF2BDF12A1A9B1F00433921 /* APIKey.plist */; };
@@ -112,6 +113,7 @@
 		CE8F33A22A180A7900FC65BD /* ExchangesDataMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangesDataMock.swift; sourceTree = "<group>"; };
 		CE8F33A42A180D7100FC65BD /* ExchangesIconMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangesIconMock.swift; sourceTree = "<group>"; };
 		CE8F33A72A184E0B00FC65BD /* HomeUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCaseTests.swift; sourceTree = "<group>"; };
+		CEAF61172A1BD8B4008D0019 /* FeatureFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFactory.swift; sourceTree = "<group>"; };
 		CEF2BDEB2A1A506B00433921 /* SnapshotViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotViewTests.swift; sourceTree = "<group>"; };
 		CEF2BDED2A1A5CEF00433921 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 		CEF2BDF12A1A9B1F00433921 /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 		CE8F337F2A1427E600FC65BD /* Builder */ = {
 			isa = PBXGroup;
 			children = (
+				CEAF61172A1BD8B4008D0019 /* FeatureFactory.swift */,
 				CE8F33802A14280500FC65BD /* HomeViewModelBuilder.swift */,
 			);
 			path = Builder;
@@ -652,6 +655,7 @@
 				CE8F33812A14280500FC65BD /* HomeViewModelBuilder.swift in Sources */,
 				CEF2BDF82A1AA24900433921 /* HomeCoordinator.swift in Sources */,
 				CE8F338A2A15285000FC65BD /* ExchangesCell.swift in Sources */,
+				CEAF61182A1BD8B4008D0019 /* FeatureFactory.swift in Sources */,
 				CE8F339D2A17C2A400FC65BD /* ErrorViewController.swift in Sources */,
 				CE8F33722A1409D700FC65BD /* HomeViewModel.swift in Sources */,
 				CE8F339B2A16F5F800FC65BD /* String+Extension.swift in Sources */,
