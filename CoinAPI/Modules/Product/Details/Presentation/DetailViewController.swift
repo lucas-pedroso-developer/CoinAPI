@@ -10,14 +10,14 @@ class DetailViewController: UIViewController {
     
     private let exchange: ExchangesEntity
     
-    private let iconImageView: UIImageView = {
+    let iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    private let titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 40)
         label.textColor = .black
@@ -25,7 +25,7 @@ class DetailViewController: UIViewController {
         return label
     }()
     
-    private let subtitleLabel: UILabel = {
+    let subtitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 25)
         label.textColor = .black
@@ -33,21 +33,21 @@ class DetailViewController: UIViewController {
         return label
     }()
     
-    private let backgroundUIView: UIView = {
+    let backgroundUIView: UIView = {
         let uiview = UIView(frame: CGRect.zero)
         uiview.backgroundColor = .gray
         uiview.translatesAutoresizingMaskIntoConstraints = false
         return uiview
     }()
     
-    private let circleView: UIView = {
+    let circleView: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private let volumeOneHourLabel: UILabel = {
+    let volumeOneHourLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textColor = .green
@@ -55,7 +55,7 @@ class DetailViewController: UIViewController {
         return label
     }()
     
-    private let volumeOneDayLabel: UILabel = {
+    let volumeOneDayLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textColor = .green
@@ -63,7 +63,7 @@ class DetailViewController: UIViewController {
         return label
     }()
     
-    private let volumeOneMonthLabel: UILabel = {
+    let volumeOneMonthLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textColor = .green
@@ -71,7 +71,7 @@ class DetailViewController: UIViewController {
         return label
     }()
     
-    private let websiteLabel: UILabel = {
+    let websiteLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .blue
