@@ -13,7 +13,6 @@
 		CE8F33342A13D40700FC65BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33332A13D40700FC65BD /* AppDelegate.swift */; };
 		CE8F33362A13D40700FC65BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33352A13D40700FC65BD /* SceneDelegate.swift */; };
 		CE8F333D2A13D40B00FC65BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8F333C2A13D40B00FC65BD /* Assets.xcassets */; };
-		CE8F33402A13D40B00FC65BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8F333E2A13D40B00FC65BD /* LaunchScreen.storyboard */; };
 		CE8F334B2A13D40B00FC65BD /* CoinAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F334A2A13D40B00FC65BD /* CoinAPITests.swift */; };
 		CE8F33552A13D40B00FC65BD /* CoinAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33542A13D40B00FC65BD /* CoinAPIUITests.swift */; };
 		CE8F33572A13D40B00FC65BD /* CoinAPIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33562A13D40B00FC65BD /* CoinAPIUITestsLaunchTests.swift */; };
@@ -82,7 +81,6 @@
 		CE8F33332A13D40700FC65BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE8F33352A13D40700FC65BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CE8F333C2A13D40B00FC65BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CE8F333F2A13D40B00FC65BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE8F33412A13D40B00FC65BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE8F33462A13D40B00FC65BD /* CoinAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8F334A2A13D40B00FC65BD /* CoinAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAPITests.swift; sourceTree = "<group>"; };
@@ -189,17 +187,9 @@
 		CE8F33322A13D40700FC65BD /* CoinAPI */ = {
 			isa = PBXGroup;
 			children = (
-				CE8F338B2A1529B900FC65BD /* Utilities */,
-				CE8F337B2A14176F00FC65BD /* Data */,
-				CE8F336E2A13FBEB00FC65BD /* Domain */,
-				CE8F33692A13F1C000FC65BD /* Network */,
-				CE8F33652A13D63A00FC65BD /* Presentation */,
-				CE8F33332A13D40700FC65BD /* AppDelegate.swift */,
-				CE8F33352A13D40700FC65BD /* SceneDelegate.swift */,
-				CE8F333C2A13D40B00FC65BD /* Assets.xcassets */,
-				CE8F333E2A13D40B00FC65BD /* LaunchScreen.storyboard */,
-				CE8F33412A13D40B00FC65BD /* Info.plist */,
-				CEF2BDF12A1A9B1F00433921 /* APIKey.plist */,
+				CEAF61272A1D58AF008D0019 /* AppDelegate */,
+				CEAF61282A1D58C1008D0019 /* Modules */,
+				CEAF61292A1D58FA008D0019 /* Resources */,
 			);
 			path = CoinAPI;
 			sourceTree = "<group>";
@@ -207,14 +197,8 @@
 		CE8F33492A13D40B00FC65BD /* CoinAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				CEAF61362A1D633E008D0019 /* Modules */,
 				CE8F334A2A13D40B00FC65BD /* CoinAPITests.swift */,
-				CEF2BDED2A1A5CEF00433921 /* HomeViewControllerTests.swift */,
-				CE8F33A02A18065700FC65BD /* HomeViewModelTests.swift */,
-				CE8F33A72A184E0B00FC65BD /* HomeUseCaseTests.swift */,
-				CE09BABF2A190E6E00823CED /* HomeRepositoryTests.swift */,
-				CE8F33A22A180A7900FC65BD /* ExchangesDataMock.swift */,
-				CE8F33A42A180D7100FC65BD /* ExchangesIconMock.swift */,
-				CEF2BDEB2A1A506B00433921 /* SnapshotViewTests.swift */,
 			);
 			path = CoinAPITests;
 			sourceTree = "<group>";
@@ -228,27 +212,6 @@
 			path = CoinAPIUITests;
 			sourceTree = "<group>";
 		};
-		CE8F33652A13D63A00FC65BD /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				CE8F33742A1413C300FC65BD /* ViewModel */,
-				CE8F33732A1413B700FC65BD /* Views */,
-				CE8F33682A13D71A00FC65BD /* Coordinator */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
-		CE8F33682A13D71A00FC65BD /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				CEF2BDF52A1AA22100433921 /* LaunchCoordinator.swift */,
-				CEF2BDF72A1AA24900433921 /* HomeCoordinator.swift */,
-				CEF2BDF92A1AA3B400433921 /* DetailCoordinator.swift */,
-				CEF2BDFB2A1AAA6B00433921 /* Coordinator.swift */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
 		CE8F33692A13F1C000FC65BD /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,33 +222,6 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		CE8F336E2A13FBEB00FC65BD /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				CE8F33782A1416B300FC65BD /* UseCases */,
-				CE8F33752A1413F400FC65BD /* Models */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		CE8F33732A1413B700FC65BD /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CE8F338F2A15974D00FC65BD /* Components */,
-				CE8F33882A15283400FC65BD /* ViewControllers */,
-				CE8F33872A15282F00FC65BD /* Cells */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		CE8F33742A1413C300FC65BD /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				CE8F33712A1409D700FC65BD /* HomeViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		CE8F33752A1413F400FC65BD /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,23 +229,6 @@
 				CE8F33962A1694D900FC65BD /* IconsEntity.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		CE8F33782A1416B300FC65BD /* UseCases */ = {
-			isa = PBXGroup;
-			children = (
-				CE8F33792A1416D600FC65BD /* HomeUseCase.swift */,
-			);
-			path = UseCases;
-			sourceTree = "<group>";
-		};
-		CE8F337B2A14176F00FC65BD /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				CE8F337F2A1427E600FC65BD /* Builder */,
-				CE8F337C2A14177500FC65BD /* Repositories */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		CE8F337C2A14177500FC65BD /* Repositories */ = {
@@ -323,28 +242,9 @@
 		CE8F337F2A1427E600FC65BD /* Builder */ = {
 			isa = PBXGroup;
 			children = (
-				CEAF61172A1BD8B4008D0019 /* FeatureFactory.swift */,
 				CE8F33802A14280500FC65BD /* HomeViewModelBuilder.swift */,
 			);
 			path = Builder;
-			sourceTree = "<group>";
-		};
-		CE8F33872A15282F00FC65BD /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				CE8F33892A15285000FC65BD /* ExchangesCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		CE8F33882A15283400FC65BD /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				CE8F33632A13D62500FC65BD /* HomeViewController.swift */,
-				CE8F33942A165A9B00FC65BD /* DetailViewController.swift */,
-				CEF2BDF32A1A9DE900433921 /* LaunchScreenViewController.swift */,
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		CE8F338B2A1529B900FC65BD /* Utilities */ = {
@@ -368,11 +268,204 @@
 		CE8F338F2A15974D00FC65BD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				CEAF61302A1D5CD7008D0019 /* Cells */,
 				CEAF61212A1CF21C008D0019 /* TableViewComponent.swift */,
 				CEAF61232A1CF232008D0019 /* LoaderComponent.swift */,
 				CEAF61252A1D24AE008D0019 /* ErrorComponent.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		CEAF61272A1D58AF008D0019 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F33332A13D40700FC65BD /* AppDelegate.swift */,
+				CE8F33352A13D40700FC65BD /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		CEAF61282A1D58C1008D0019 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				CEAF612B2A1D5BAA008D0019 /* Foundation */,
+				CEAF612A2A1D5B8D008D0019 /* Product */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		CEAF61292A1D58FA008D0019 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F333C2A13D40B00FC65BD /* Assets.xcassets */,
+				CE8F33412A13D40B00FC65BD /* Info.plist */,
+				CEF2BDF12A1A9B1F00433921 /* APIKey.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CEAF612A2A1D5B8D008D0019 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				CEAF61332A1D5E02008D0019 /* LaunchScreen */,
+				CEAF612C2A1D5C1A008D0019 /* Home */,
+				CEAF61312A1D5DBB008D0019 /* Details */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		CEAF612B2A1D5BAA008D0019 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				CEAF61172A1BD8B4008D0019 /* FeatureFactory.swift */,
+				CEF2BDFB2A1AAA6B00433921 /* Coordinator.swift */,
+				CE8F338B2A1529B900FC65BD /* Utilities */,
+				CE8F338F2A15974D00FC65BD /* Components */,
+				CE8F33692A13F1C000FC65BD /* Network */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		CEAF612C2A1D5C1A008D0019 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CEAF612F2A1D5C2E008D0019 /* Data */,
+				CEAF612E2A1D5C29008D0019 /* Domain */,
+				CEAF612D2A1D5C21008D0019 /* Presentation */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CEAF612D2A1D5C21008D0019 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F33712A1409D700FC65BD /* HomeViewModel.swift */,
+				CEF2BDF72A1AA24900433921 /* HomeCoordinator.swift */,
+				CE8F33632A13D62500FC65BD /* HomeViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CEAF612E2A1D5C29008D0019 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F33792A1416D600FC65BD /* HomeUseCase.swift */,
+				CE8F33752A1413F400FC65BD /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CEAF612F2A1D5C2E008D0019 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F337F2A1427E600FC65BD /* Builder */,
+				CE8F337C2A14177500FC65BD /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CEAF61302A1D5CD7008D0019 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F33892A15285000FC65BD /* ExchangesCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CEAF61312A1D5DBB008D0019 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				CEAF61322A1D5DD1008D0019 /* Presentation */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		CEAF61322A1D5DD1008D0019 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CEF2BDF92A1AA3B400433921 /* DetailCoordinator.swift */,
+				CE8F33942A165A9B00FC65BD /* DetailViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CEAF61332A1D5E02008D0019 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CEAF61342A1D5E0B008D0019 /* Presentation */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		CEAF61342A1D5E0B008D0019 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CEF2BDF52A1AA22100433921 /* LaunchCoordinator.swift */,
+				CEF2BDF32A1A9DE900433921 /* LaunchScreenViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CEAF61352A1D6321008D0019 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				CEAF61372A1D634A008D0019 /* Home */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		CEAF61362A1D633E008D0019 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				CEAF613B2A1D63A9008D0019 /* Mocks */,
+				CEAF61352A1D6321008D0019 /* Product */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		CEAF61372A1D634A008D0019 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CEAF613A2A1D6392008D0019 /* Data */,
+				CEAF61392A1D637F008D0019 /* Domain */,
+				CEAF61382A1D636B008D0019 /* Presentation */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CEAF61382A1D636B008D0019 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F33A02A18065700FC65BD /* HomeViewModelTests.swift */,
+				CEF2BDED2A1A5CEF00433921 /* HomeViewControllerTests.swift */,
+				CEF2BDEB2A1A506B00433921 /* SnapshotViewTests.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CEAF61392A1D637F008D0019 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F33A72A184E0B00FC65BD /* HomeUseCaseTests.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CEAF613A2A1D6392008D0019 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE09BABF2A190E6E00823CED /* HomeRepositoryTests.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CEAF613B2A1D63A9008D0019 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CE8F33A22A180A7900FC65BD /* ExchangesDataMock.swift */,
+				CE8F33A42A180D7100FC65BD /* ExchangesIconMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		FF601A1F2609407CE12629ED /* Frameworks */ = {
@@ -496,7 +589,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF2BDF22A1A9B1F00433921 /* APIKey.plist in Resources */,
-				CE8F33402A13D40B00FC65BD /* LaunchScreen.storyboard in Resources */,
 				CE8F333D2A13D40B00FC65BD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -710,17 +802,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		CE8F333E2A13D40B00FC65BD /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE8F333F2A13D40B00FC65BD /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		CE8F33582A13D40B00FC65BD /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -846,7 +927,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2GZ78V242F;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CoinAPI/Info.plist;
+				INFOPLIST_FILE = CoinAPI/Resources/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -876,7 +957,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2GZ78V242F;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CoinAPI/Info.plist;
+				INFOPLIST_FILE = CoinAPI/Resources/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

@@ -72,7 +72,7 @@ class HomeViewModelTests: XCTestCase {
         viewModel.getExchanges()
 
         XCTAssertTrue(mockView.showLoadingCalled)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             XCTAssertTrue(self.mockView.hideLoadingCalled)
             XCTAssertTrue(self.mockView.showErrorCalled)
             XCTAssertEqual(self.mockView.errorMessage, expectedErrorMessage)
