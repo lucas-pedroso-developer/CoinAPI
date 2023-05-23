@@ -1,13 +1,21 @@
 import UIKit
 import QuartzCore
+import Kingfisher
 
 class ExchangesCell: UITableViewCell {
     
+    var imageURL: URL?
+
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
     let valueLabel = UILabel()
     let iconImageView = UIImageView()
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        iconImageView.cancelImageLoad()
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCellLayout()
@@ -28,10 +36,29 @@ class ExchangesCell: UITableViewCell {
     private func loadImage(icon: String) {
         self.iconImageView.image = UIImage(named: "no-image")
         if let url = URL(string: icon) {
-            iconImageView.loadImage(from: url) { [weak self] image in
-                DispatchQueue.main.async {
-                    self?.iconImageView.image = image
-                    return
+            let cacheKey = "\(url)"
+            if let cachedImage = ImageCache.default.retrieveImageInMemoryCache(forKey: cacheKey) {
+                self.iconImageView.image = cachedImage
+            } else {
+                ImageCache.default.retrieveImage(forKey: cacheKey) { result in
+                    switch result {
+                    case .success(let cacheResult):
+                        if let cachedImage = cacheResult.image {
+                            self.iconImageView.image = cachedImage
+                        } else {
+                            let resource = ImageResource(downloadURL: url)
+                            self.iconImageView.kf.setImage(with: resource) { result in
+                                switch result {
+                                case .success(let imageResult):
+                                    ImageCache.default.store(imageResult.image, forKey: cacheKey)
+                                case .failure(let error):
+                                    print("Download image error: \(error.localizedDescription)")
+                                }
+                            }
+                        }
+                    case .failure(let error):
+                        print("Retrieve image from cache error: \(error.localizedDescription)")
+                    }
                 }
             }
         }

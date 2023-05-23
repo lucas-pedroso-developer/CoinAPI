@@ -16,4 +16,8 @@ extension UIImageView {
         }
         task.resume()
     }
+    
+    func cancelImageLoad() {
+        URLSession.shared.invalidateAndCancel()
+    }
 }
