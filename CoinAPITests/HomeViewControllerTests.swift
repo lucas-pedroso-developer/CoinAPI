@@ -3,32 +3,24 @@ import XCTest
 
 class HomeViewControllerTests: XCTestCase {
     
-    var viewController: HomeViewController!
+    var sut: HomeViewController!
     var coordinatorMock: DetailCoordinatorMock!
     var viewModelMock: HomeViewModelProtocolMock!
-    var tableViewMock: UITableViewMock!
-    var loaderViewControllerMock: LoadingViewControllerMock!
     
     override func setUp() {
         super.setUp()
-        viewController = HomeViewController()
-        coordinatorMock = DetailCoordinatorMock(navigationController: viewController.navigationController ?? UINavigationController(), exchange: getSelectedExchange(index: 0))
+        sut = HomeViewController()
+        sut.setupViews()
+        coordinatorMock = DetailCoordinatorMock(navigationController: sut.navigationController ?? UINavigationController(), exchange: getSelectedExchange(index: 0))
         viewModelMock = HomeViewModelProtocolMock()
-        tableViewMock = UITableViewMock()
-        loaderViewControllerMock = LoadingViewControllerMock()
-        
-        viewController.detailCoordinator = coordinatorMock
-        viewController.viewModel = viewModelMock
-        viewController.tableView = tableViewMock
-        viewController.loaderViewController = loaderViewControllerMock
+        sut.detailCoordinator = coordinatorMock
+        sut.viewModel = viewModelMock
     }
     
     override func tearDown() {
-        viewController = nil
+        sut = nil
         coordinatorMock = nil
         viewModelMock = nil
-        tableViewMock = nil
-        loaderViewControllerMock = nil
         super.tearDown()
     }
     
@@ -37,32 +29,17 @@ class HomeViewControllerTests: XCTestCase {
     }
     
     func testViewDidLoad() {
-        viewController.viewDidLoad()
-        XCTAssertEqual(viewController.title, Constants.title.rawValue)
+        sut.viewDidLoad()
+        XCTAssertEqual(sut.title, Constants.title.rawValue)
     }
     
     func testGetExchanges() {
-        viewController.getExchanges()
+        sut.getExchanges()
         XCTAssertTrue(viewModelMock.didCallGetExchanges)
     }
     
-    func testReloadTableView() {
-        viewController.reloadTableView()
-        XCTAssertTrue(tableViewMock.reloadDataCalled)
-    }
-    
-    func testShowLoading() {
-        viewController.showLoading()
-        XCTAssertTrue(loaderViewControllerMock.startLoadingCalled)
-    }
-    
-    func testHideLoading() {
-        viewController.hideLoading()
-        XCTAssertTrue(loaderViewControllerMock.stopLoadingCalled)
-    }
-    
     func testDidTapRefresh() {
-        viewController.didTapRefresh()
+        sut.didTapRefresh()
         XCTAssertTrue(viewModelMock.didCallGetExchanges)
     }
     
@@ -70,6 +47,28 @@ class HomeViewControllerTests: XCTestCase {
         coordinatorMock.start()
         XCTAssertTrue(coordinatorMock.didCallShowDetails)
     }
+    
+    func testTableViewComponent_Configuration() {
+        XCTAssertNotNil(sut.tableViewComponent)
+        XCTAssertNotNil(sut.tableViewComponent.dataSource)
+        XCTAssertNotNil(sut.tableViewComponent.delegate)
+        XCTAssertTrue(sut.tableViewComponent.backgroundColor == .clear)
+    }
+    
+    func testLoaderComponent_Configuration() {
+        XCTAssertNotNil(sut.loaderComponent)
+    }
+    
+    func testShowLoading() {
+        sut.showLoading()
+        XCTAssertTrue(sut.loaderComponent.activityIndicator.isAnimating)
+    }
+    
+    func testHideLoading() {
+        sut.hideLoading()
+        XCTAssertFalse(sut.loaderComponent.activityIndicator.isAnimating)
+    }
+    
 }
 
 class DetailCoordinatorMock: DetailCoordinator {
@@ -115,26 +114,5 @@ class HomeViewModelProtocolMock: HomeViewModelProtocol {
     
     func getSelectedExchange(index: Int) -> ExchangesEntity? {
         return nil
-    }
-}
-
-class UITableViewMock: UITableView {
-    var reloadDataCalled = false
-    
-    override func reloadData() {
-        reloadDataCalled = true
-    }
-}
-
-class LoadingViewControllerMock: LoadingViewController {
-    var startLoadingCalled = false
-    var stopLoadingCalled = false
-    
-    override func startLoading() {
-        startLoadingCalled = true
-    }
-    
-    override func stopLoading() {
-        stopLoadingCalled = true
     }
 }
