@@ -1,6 +1,9 @@
 import UIKit
 
 class LabelComponent: UILabel {
+    
+    // MARK: - Initialization
+    
     init() {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -9,6 +12,8 @@ class LabelComponent: UILabel {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Configuration
     
     func configure(text: String, font: UIFont = UIFont(name: "San Francisco", size: 13)!, textColor: UIColor = .black, isBold: Bool = false, isItalic: Bool = false) {
         self.text = text

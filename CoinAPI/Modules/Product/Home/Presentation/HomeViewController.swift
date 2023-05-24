@@ -12,10 +12,10 @@ protocol HomeViewProtocol: AnyObject {
 // MARK: - Constants
 
 enum Constants: String {
-    case title = "HOME"
+    case title = "home"
     case cell = "ExchangesCell"
 }
-
+//case volumeHour = "volumeHour"
 class HomeViewController: UIViewController {
 
     // MARK: - Properties
@@ -65,7 +65,7 @@ class HomeViewController: UIViewController {
             NSAttributedString.Key.foregroundColor: UIColor.black,
             NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)
         ]
-        self.title = Constants.title.rawValue
+        self.title = NSLocalizedString(Constants.title.rawValue, comment: String()) 
     }
     
     // MARK: - Table View Component Setup

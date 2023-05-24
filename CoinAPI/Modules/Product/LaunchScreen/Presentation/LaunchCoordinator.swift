@@ -8,6 +8,8 @@ class LaunchCoordinator: Coordinator {
         self.window = window
     }
     
+    // MARK: - Coordinator
+    
     func start() {
         let launchScreenViewController = LaunchScreenViewController()
         self.launchScreenViewController = launchScreenViewController
@@ -17,6 +19,8 @@ class LaunchCoordinator: Coordinator {
             self.showHomeViewController()
         }
     }
+    
+    // MARK: - Private Methods
     
     private func showHomeViewController() {
         let homeViewController = HomeViewController()

@@ -12,10 +12,14 @@ protocol HomeViewModelProtocol {
 
 class HomeViewModel: HomeViewModelProtocol {
     
+    // MARK: - Properties
+    
     var exchangesEntity: [ExchangesEntity?]?
     var iconsEntity: [IconsEntity?]?
     weak var view: HomeViewProtocol?
     private let homeUseCase: HomeUseCaseProtocol
+    
+    // MARK: - Initialization
     
     init(view: HomeViewProtocol, homeUseCase: HomeUseCaseProtocol) {
         self.view = view
@@ -24,6 +28,9 @@ class HomeViewModel: HomeViewModelProtocol {
 }
 
 extension HomeViewModel {
+    
+    // MARK: - Methods
+    
     func getExchanges() {
         view?.showLoading()
         
@@ -69,6 +76,9 @@ extension HomeViewModel {
 }
 
 extension HomeViewModel {
+    
+    // MARK: - Methods
+    
     func getNumberOfRows(index: Int) -> Int {
         return exchangesEntity?.count ?? Int()
     }

@@ -6,6 +6,8 @@ protocol ErrorComponentDelegate: AnyObject {
 
 class ErrorComponent: UIView, ErrorComponentDelegate {
     
+    // MARK: - Properties
+    
     var message: String
     weak var delegate: ErrorComponentDelegate?
     
@@ -31,6 +33,8 @@ class ErrorComponent: UIView, ErrorComponentDelegate {
         return button
     }()
     
+    // MARK: - Initialization
+    
     init(message: String) {
         self.message = message
         super.init(frame: .zero)
@@ -43,6 +47,8 @@ class ErrorComponent: UIView, ErrorComponentDelegate {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Private Methods
     
     private func setupViews() {
         addSubview(backgroundView)
@@ -74,6 +80,8 @@ class ErrorComponent: UIView, ErrorComponentDelegate {
     @objc private func refreshButtonTapped() {
         self.didTapRefresh()
     }
+    
+    // MARK: - ErrorComponentDelegate Methods
     
     func didTapRefresh() {
         delegate?.didTapRefresh()

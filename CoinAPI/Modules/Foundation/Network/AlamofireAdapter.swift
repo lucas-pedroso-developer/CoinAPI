@@ -4,13 +4,14 @@ public protocol HttpGetClient {
     func get(url: URL?, completion: @escaping (Result<Data?, HttpError>) -> Void)
 }
 
-
 public final class AlamofireAdapter: HttpGetClient {
     private let session : Session
     
     public init(session: Session = .default) {
         self.session = session
     }
+    
+    // MARK: - HttpGetClient
     
     /// Performs a GET request to the specified URL and returns the result via a completion block.
     /// - Parameters:

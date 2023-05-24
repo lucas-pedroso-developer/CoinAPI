@@ -1,6 +1,9 @@
 import UIKit
 
 class CircleViewComponent: UIView {
+    
+    // MARK: - Initialization
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -17,6 +20,8 @@ class CircleViewComponent: UIView {
         self.layer.cornerRadius = min(frame.width, frame.height) / 2
     }
     
+    // MARK: - Layout
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         self.layer.cornerRadius = min(frame.width, frame.height) / 2
@@ -27,6 +32,8 @@ class CircleViewComponent: UIView {
             setNeedsLayout()
         }
     }
+    
+    // MARK: - Configuration
     
     func configure(size: CGSize, backgroundColor: UIColor, borderWidth: CGFloat, borderColor: UIColor) {
         self.frame.size = size

@@ -1,5 +1,7 @@
 import Foundation
 
+// MARK: - NumberFormatter Extension
+
 extension NumberFormatter {
     static let currencyFormatter: NumberFormatter = {
         let formatter = NumberFormatter()

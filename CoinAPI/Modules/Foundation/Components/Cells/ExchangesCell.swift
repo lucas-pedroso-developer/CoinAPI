@@ -4,12 +4,16 @@ import Kingfisher
 
 class ExchangesCell: UITableViewCell {
     
+    // MARK: - Properties
+    
     var imageURL: URL?
 
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
     let valueLabel = UILabel()
     let iconImageView = UIImageView()
+    
+    // MARK: - Lifecycle
 
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -22,11 +26,11 @@ class ExchangesCell: UITableViewCell {
         animateCellOnLoad()
     }
     
-    
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Public Methods
     
     func setupCell(title: String, subtitle: String, value: Double, icon: String) {
         self.titleLabel.text = title
@@ -34,6 +38,8 @@ class ExchangesCell: UITableViewCell {
         self.valueLabel.text = NumberFormatter.formatCurrency(value: value)
         self.loadImage(icon: icon)
     }
+    
+    // MARK: - Private Methods
     
     private func loadImage(icon: String) {
         self.iconImageView.image = UIImage(named: "no-image")

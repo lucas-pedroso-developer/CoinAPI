@@ -1,6 +1,9 @@
 import UIKit
 
 class ImageViewComponent: UIImageView {
+    
+    // MARK: - Initialization
+    
     init() {
         super.init(frame: .zero)
         self.contentMode = .scaleAspectFit

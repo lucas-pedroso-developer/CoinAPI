@@ -1,4 +1,7 @@
 struct ExchangesEntity : Codable, Equatable {
+    
+    // MARK: - Properties
+    
     let exchangeId : String?
     let website : String?
     let name : String?
@@ -34,6 +37,8 @@ struct ExchangesEntity : Codable, Equatable {
         case volume1mthUsd = "volume_1mth_usd"
         case icon = "icon"
     }
+    
+    // MARK: - Initializers
     
     init(
             exchangeId: String?,
@@ -94,6 +99,9 @@ struct ExchangesEntity : Codable, Equatable {
 }
 
 extension ExchangesEntity {
+    
+    // MARK: - Mapper
+    
     static func mapFromIconsData(iconsEntity: [IconsEntity], exchangesEntity: [ExchangesEntity]) -> [ExchangesEntity] {
         var exchanges: [ExchangesEntity] = []
         for (_, element) in exchangesEntity.enumerated() {

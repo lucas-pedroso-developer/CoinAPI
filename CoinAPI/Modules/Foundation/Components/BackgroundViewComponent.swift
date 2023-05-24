@@ -1,6 +1,9 @@
 import UIKit
 
 class BackgroundViewComponent: UIView {
+    
+    // MARK: - Initialization
+    
     init() {
         super.init(frame: .zero)
         self.backgroundColor = .gray

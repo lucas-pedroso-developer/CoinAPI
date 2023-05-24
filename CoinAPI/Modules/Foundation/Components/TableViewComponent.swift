@@ -7,10 +7,14 @@ protocol TableViewComponentDelegate: AnyObject {
 
 class TableViewComponent: UIView, UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: - Properties
+    
     weak var delegate: TableViewComponentDelegate?
     
     var tableView: UITableView!
     var dataSource: UITableViewDataSource?
+    
+    // MARK: - Initialization
     
     init(dataSource: UITableViewDataSource) {
         super.init(frame: .zero)
@@ -21,6 +25,8 @@ class TableViewComponent: UIView, UITableViewDelegate, UITableViewDataSource {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Private Methods
     
     private func setupTableView() {
         tableView = UITableView(frame: .zero)
@@ -39,6 +45,8 @@ class TableViewComponent: UIView, UITableViewDelegate, UITableViewDataSource {
         tableView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     }
     
+    // MARK: - Public Methods
+    
     func reloadData() {
         tableView.reloadData()
     }
@@ -46,6 +54,8 @@ class TableViewComponent: UIView, UITableViewDelegate, UITableViewDataSource {
     func registerCell<T: UITableViewCell>(_ cellClass: T.Type, forCellReuseIdentifier identifier: String) {
         tableView.register(cellClass, forCellReuseIdentifier: identifier)
     }
+    
+    // MARK: - UITableViewDataSource Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource?.tableView(tableView, numberOfRowsInSection: section) ?? 0
@@ -55,6 +65,8 @@ class TableViewComponent: UIView, UITableViewDelegate, UITableViewDataSource {
         return dataSource?.tableView(tableView, cellForRowAt: indexPath) ?? UITableViewCell()
     }
     
+    // MARK: - UITableViewDelegate Methods
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return delegate?.heightForRowAt(indexPath: indexPath) ?? UITableView.automaticDimension
     }
@@ -63,6 +75,8 @@ class TableViewComponent: UIView, UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         delegate?.didSelectRow(at: indexPath)
     }
+    
+    // MARK: - Custom Methods
     
     func selectRow(at indexPath: IndexPath) {
         tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)

@@ -2,9 +2,10 @@ import UIKit
 
 // MARK: - Constants
 enum DetailConstants: String {
-    case volumeHour = "Volume/hour"
-    case volumeDay = "Volume/day"
-    case volumeMonth = "Volume/month"
+    case title = "detail"
+    case volumeHour = "volumeHour"
+    case volumeDay = "volumeDay"
+    case volumeMonth = "volumeMonth"
 }
 
 class DetailViewController: UIViewController {
@@ -61,7 +62,7 @@ class DetailViewController: UIViewController {
     }
     
     private func setupNavBarTitle() {
-        self.title = "DETAIL"
+        self.title = NSLocalizedString(Constants.title.rawValue, comment: String())
     }
     
     private func setupImageView() {
@@ -149,9 +150,9 @@ class DetailViewController: UIViewController {
         titleLabel.configure(text: exchange.exchangeId ?? String(), font: UIFont.systemFont(ofSize: 40), isBold: true)
         subtitleLabel.configure(text: exchange.name ?? String(), font: UIFont.systemFont(ofSize: 25), isBold: true)
         
-        let volumeHourText = DetailConstants.volumeHour.rawValue + " - " + (NumberFormatter.formatCurrency(value: exchange.volume1hrsUsd ?? Double()) ?? String())
-        let volumeDayText = DetailConstants.volumeDay.rawValue + " - " + (NumberFormatter.formatCurrency(value: exchange.volume1dayUsd ?? Double()) ?? String())
-        let volumeMonthText = DetailConstants.volumeMonth.rawValue + " - " + (NumberFormatter.formatCurrency(value: exchange.volume1mthUsd ?? Double()) ?? String())
+        let volumeHourText = NSLocalizedString(DetailConstants.volumeHour.rawValue, comment: String()) + " - " + (NumberFormatter.formatCurrency(value: exchange.volume1hrsUsd ?? Double()) ?? String())
+        let volumeDayText = NSLocalizedString(DetailConstants.volumeDay.rawValue, comment: String()) + " - " + (NumberFormatter.formatCurrency(value: exchange.volume1dayUsd ?? Double()) ?? String())
+        let volumeMonthText = NSLocalizedString(DetailConstants.volumeMonth.rawValue, comment: String()) + " - " + (NumberFormatter.formatCurrency(value: exchange.volume1mthUsd ?? Double()) ?? String())
         
         volumeOneHourLabel.configure(text: volumeHourText, font: UIFont.systemFont(ofSize: 20), textColor: .green)
         volumeOneDayLabel.configure(text: volumeDayText, font: UIFont.systemFont(ofSize: 20), textColor: .green)
