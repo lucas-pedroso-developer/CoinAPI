@@ -30,7 +30,7 @@ class HomeViewControllerTests: XCTestCase {
     
     func testViewDidLoad() {
         sut.viewDidLoad()
-        XCTAssertEqual(sut.title, Constants.title.rawValue)
+        XCTAssertEqual(sut.title, NSLocalizedString(Constants.title.rawValue, comment: String()))
     }
     
     func testGetExchanges() {
@@ -50,9 +50,9 @@ class HomeViewControllerTests: XCTestCase {
     
     func testTableViewComponent_Configuration() {
         XCTAssertNotNil(sut.tableViewComponent)
-        XCTAssertNotNil(sut.tableViewComponent.dataSource)
-        XCTAssertNotNil(sut.tableViewComponent.delegate)
-        XCTAssertTrue(sut.tableViewComponent.backgroundColor == .clear)
+        XCTAssertNotNil(sut.tableViewComponent?.dataSource)
+        XCTAssertNotNil(sut.tableViewComponent?.delegate)
+        XCTAssertTrue(sut.tableViewComponent?.backgroundColor == .clear)
     }
     
     func testLoaderComponent_Configuration() {
@@ -61,12 +61,12 @@ class HomeViewControllerTests: XCTestCase {
     
     func testShowLoading() {
         sut.showLoading()
-        XCTAssertTrue(sut.loaderComponent.activityIndicator.isAnimating)
+        XCTAssertTrue(sut.loaderComponent?.activityIndicator.isAnimating ?? false)
     }
     
     func testHideLoading() {
         sut.hideLoading()
-        XCTAssertFalse(sut.loaderComponent.activityIndicator.isAnimating)
+        XCTAssertFalse(sut.loaderComponent?.activityIndicator.isAnimating ?? true)
     }
     
 }
