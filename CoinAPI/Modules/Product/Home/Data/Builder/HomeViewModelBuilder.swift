@@ -9,7 +9,7 @@ enum HomeViewModelConfigurator: FeatureFactory {
     }
      
     static func make(with dependencies: Dependencies) -> HomeViewModelProtocol {
-        let network = AlamofireAdapter()
+        let network = HttpService()
         let repository = HomeRepository(network: network)
         let useCase = HomeUseCase(homeRepository: repository)
         let viewModel = HomeViewModel(view: dependencies.view, homeUseCase: useCase)

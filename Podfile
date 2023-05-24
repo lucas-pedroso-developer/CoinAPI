@@ -5,7 +5,6 @@ target 'CoinAPI' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   
-  pod 'Alamofire', '~> 5.6.4'
   pod 'Wormholy', '~> 1.6.6'
   pod 'PromiseKit', '~> 6.18.1'
   pod 'Kingfisher', '~> 7.6.2'

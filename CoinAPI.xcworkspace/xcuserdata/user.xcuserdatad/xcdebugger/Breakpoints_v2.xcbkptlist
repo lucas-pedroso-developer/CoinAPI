@@ -420,7 +420,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "AB857826-8585-4EAC-A852-08E6EBCCD127 - 9109e519aea9a58e"
+                  uuid = "AB857826-8585-4EAC-A852-08E6EBCCD127 - 9109e519aea9a56f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -430,12 +430,12 @@
                   urlString = "file:///Users/user/Desktop/Manguinho/CoinAPI/CoinAPI/Modules/Product/Details/Presentation/DetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "167"
-                  endingLineNumber = "167"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
                   offsetFromSymbolStart = "188">
                </Location>
                <Location
-                  uuid = "AB857826-8585-4EAC-A852-08E6EBCCD127 - 9109e519aea9a58e"
+                  uuid = "AB857826-8585-4EAC-A852-08E6EBCCD127 - 9109e519aea9a56f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -445,12 +445,12 @@
                   urlString = "file:///Users/user/Desktop/Manguinho/CoinAPI/CoinAPI/Modules/Product/Details/Presentation/DetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "167"
-                  endingLineNumber = "167"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
                   offsetFromSymbolStart = "248">
                </Location>
                <Location
-                  uuid = "AB857826-8585-4EAC-A852-08E6EBCCD127 - 9109e519aea9a58e"
+                  uuid = "AB857826-8585-4EAC-A852-08E6EBCCD127 - 9109e519aea9a56f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -460,8 +460,8 @@
                   urlString = "file:///Users/user/Desktop/Manguinho/CoinAPI/CoinAPI/Modules/Product/Details/Presentation/DetailViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "167"
-                  endingLineNumber = "167"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
                   offsetFromSymbolStart = "276">
                </Location>
             </Locations>
