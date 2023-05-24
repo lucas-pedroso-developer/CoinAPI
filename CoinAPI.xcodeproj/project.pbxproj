@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		80E109BFEE227536F76E099E /* Pods_CoinAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BBACCB13EC773F9CF23B19 /* Pods_CoinAPI.framework */; };
 		84F73E19B7F3D56542585961 /* Pods_CoinAPI_CoinAPIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8D64774309C4DE3C7C1109 /* Pods_CoinAPI_CoinAPIUITests.framework */; };
+		CE00B2C12A1D819B0097CD9C /* ImageViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00B2C02A1D819B0097CD9C /* ImageViewComponent.swift */; };
+		CE00B2C32A1E3CF10097CD9C /* LabelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00B2C22A1E3CF10097CD9C /* LabelComponent.swift */; };
+		CE00B2C52A1E71090097CD9C /* CircleViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00B2C42A1E71090097CD9C /* CircleViewComponent.swift */; };
+		CE00B2C72A1E76050097CD9C /* BackgroundViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00B2C62A1E76050097CD9C /* BackgroundViewComponent.swift */; };
 		CE09BAC02A190E6E00823CED /* HomeRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09BABF2A190E6E00823CED /* HomeRepositoryTests.swift */; };
 		CE8F33342A13D40700FC65BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33332A13D40700FC65BD /* AppDelegate.swift */; };
 		CE8F33362A13D40700FC65BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8F33352A13D40700FC65BD /* SceneDelegate.swift */; };
@@ -77,6 +81,10 @@
 		A342B8E19CC6C8CBCBC9557A /* Pods-CoinAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinAPI.debug.xcconfig"; path = "Target Support Files/Pods-CoinAPI/Pods-CoinAPI.debug.xcconfig"; sourceTree = "<group>"; };
 		ADFD50459239E055AA04E55B /* Pods-CoinAPITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinAPITests.release.xcconfig"; path = "Target Support Files/Pods-CoinAPITests/Pods-CoinAPITests.release.xcconfig"; sourceTree = "<group>"; };
 		C545A493AD86408037E47D43 /* Pods-CoinAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinAPI.release.xcconfig"; path = "Target Support Files/Pods-CoinAPI/Pods-CoinAPI.release.xcconfig"; sourceTree = "<group>"; };
+		CE00B2C02A1D819B0097CD9C /* ImageViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewComponent.swift; sourceTree = "<group>"; };
+		CE00B2C22A1E3CF10097CD9C /* LabelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelComponent.swift; sourceTree = "<group>"; };
+		CE00B2C42A1E71090097CD9C /* CircleViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewComponent.swift; sourceTree = "<group>"; };
+		CE00B2C62A1E76050097CD9C /* BackgroundViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundViewComponent.swift; sourceTree = "<group>"; };
 		CE09BABF2A190E6E00823CED /* HomeRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepositoryTests.swift; sourceTree = "<group>"; };
 		CE8F33302A13D40700FC65BD /* CoinAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8F33332A13D40700FC65BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -274,6 +282,10 @@
 				CEAF61212A1CF21C008D0019 /* TableViewComponent.swift */,
 				CEAF61232A1CF232008D0019 /* LoaderComponent.swift */,
 				CEAF61252A1D24AE008D0019 /* ErrorComponent.swift */,
+				CE00B2C02A1D819B0097CD9C /* ImageViewComponent.swift */,
+				CE00B2C22A1E3CF10097CD9C /* LabelComponent.swift */,
+				CE00B2C42A1E71090097CD9C /* CircleViewComponent.swift */,
+				CE00B2C62A1E76050097CD9C /* BackgroundViewComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -753,6 +765,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE00B2C72A1E76050097CD9C /* BackgroundViewComponent.swift in Sources */,
 				CEF2BDF42A1A9DE900433921 /* LaunchScreenViewController.swift in Sources */,
 				CEAF61242A1CF232008D0019 /* LoaderComponent.swift in Sources */,
 				CE8F33952A165A9B00FC65BD /* DetailViewController.swift in Sources */,
@@ -769,16 +782,19 @@
 				CE8F33722A1409D700FC65BD /* HomeViewModel.swift in Sources */,
 				CE8F339B2A16F5F800FC65BD /* String+Extension.swift in Sources */,
 				CE8F337A2A1416D600FC65BD /* HomeUseCase.swift in Sources */,
+				CE00B2C52A1E71090097CD9C /* CircleViewComponent.swift in Sources */,
 				CE8F33342A13D40700FC65BD /* AppDelegate.swift in Sources */,
 				CE8F336D2A13F22800FC65BD /* HttpError.swift in Sources */,
 				CE8F33362A13D40700FC65BD /* SceneDelegate.swift in Sources */,
 				CEF2BDF62A1AA22100433921 /* LaunchCoordinator.swift in Sources */,
 				CE8F33642A13D62500FC65BD /* HomeViewController.swift in Sources */,
 				CE8F33972A1694D900FC65BD /* IconsEntity.swift in Sources */,
+				CE00B2C32A1E3CF10097CD9C /* LabelComponent.swift in Sources */,
 				CE8F33992A16C03D00FC65BD /* UIImageView+Extension.swift in Sources */,
 				CE8F33862A150AE900FC65BD /* APIRoute.swift in Sources */,
 				CEAF61222A1CF21C008D0019 /* TableViewComponent.swift in Sources */,
 				CE8F337E2A14178C00FC65BD /* HomeRepository.swift in Sources */,
+				CE00B2C12A1D819B0097CD9C /* ImageViewComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

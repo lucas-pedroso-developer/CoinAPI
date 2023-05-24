@@ -1,5 +1,6 @@
 import UIKit
 
+// MARK: - Constants
 enum DetailConstants: String {
     case volumeHour = "Volume/hour"
     case volumeDay = "Volume/day"
@@ -8,77 +9,22 @@ enum DetailConstants: String {
 
 class DetailViewController: UIViewController {
     
+    // MARK: - Properties
+    
     private let exchange: ExchangesEntity
     
-    let iconImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
+    let iconImageView = ImageViewComponent()
+    let titleLabel = LabelComponent()
+    let subtitleLabel = LabelComponent()
+    let backgroundUIView = BackgroundViewComponent()
+    let circleView = CircleViewComponent()
+    let volumeOneHourLabel = LabelComponent()
+    let volumeOneDayLabel = LabelComponent()
+    let volumeOneMonthLabel = LabelComponent()
+    let websiteLabel = LabelComponent()
     
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 40)
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
     
-    let subtitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 25)
-        label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let backgroundUIView: UIView = {
-        let uiview = UIView(frame: CGRect.zero)
-        uiview.backgroundColor = .gray
-        uiview.translatesAutoresizingMaskIntoConstraints = false
-        return uiview
-    }()
-    
-    let circleView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .lightGray
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    let volumeOneHourLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textColor = .green
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let volumeOneDayLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textColor = .green
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let volumeOneMonthLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textColor = .green
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let websiteLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .blue
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.isUserInteractionEnabled = true
-        return label
-    }()
+    // MARK: - Initialization
     
     init(exchange: ExchangesEntity) {
         self.exchange = exchange
@@ -88,6 +34,8 @@ class DetailViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,6 +47,8 @@ class DetailViewController: UIViewController {
         super.viewDidLayoutSubviews()
         circleView.layer.cornerRadius = circleView.frame.width / 2
     }
+    
+    // MARK: - UI Setup
     
     private func setupUI() {
         view.backgroundColor = .white
@@ -164,6 +114,11 @@ class DetailViewController: UIViewController {
     private func setupCircleView() {
         view.addSubview(circleView)
         
+        circleView.configure(size: CGSize(width: 140, height: 140),
+                             backgroundColor: UIColor.lightGray,
+                             borderWidth: 2.0,
+                             borderColor: UIColor.black)
+
         NSLayoutConstraint.activate([
             circleView.topAnchor.constraint(equalTo: backgroundUIView.bottomAnchor, constant: -70),
             circleView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
@@ -182,24 +137,38 @@ class DetailViewController: UIViewController {
             websiteLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0)
         ])
         
+        websiteLabel.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(websiteLabelTapped))
         websiteLabel.addGestureRecognizer(tapGesture)
     }
     
+    // MARK: - Data Population
+    
     private func populateData() {
         self.loadImage(icon: exchange.icon ?? String())
-        titleLabel.text = exchange.exchangeId
-        subtitleLabel.text = exchange.name
-        volumeOneHourLabel.text = DetailConstants.volumeHour.rawValue + " - " + (NumberFormatter.formatCurrency(value: exchange.volume1hrsUsd ?? Double()) ?? String())
-        volumeOneDayLabel.text = DetailConstants.volumeDay.rawValue + " - " + (NumberFormatter.formatCurrency(value: exchange.volume1dayUsd ?? Double()) ?? String())
-        volumeOneMonthLabel.text = DetailConstants.volumeMonth.rawValue + " - " + (NumberFormatter.formatCurrency(value: exchange.volume1mthUsd ?? Double()) ?? String())
-        websiteLabel.text = exchange.website
+        titleLabel.configure(text: exchange.exchangeId ?? String(), font: UIFont.systemFont(ofSize: 40), isBold: true)
+        subtitleLabel.configure(text: exchange.name ?? String(), font: UIFont.systemFont(ofSize: 25), isBold: true)
+        
+        let volumeHourText = DetailConstants.volumeHour.rawValue + " - " + (NumberFormatter.formatCurrency(value: exchange.volume1hrsUsd ?? Double()) ?? String())
+        let volumeDayText = DetailConstants.volumeDay.rawValue + " - " + (NumberFormatter.formatCurrency(value: exchange.volume1dayUsd ?? Double()) ?? String())
+        let volumeMonthText = DetailConstants.volumeMonth.rawValue + " - " + (NumberFormatter.formatCurrency(value: exchange.volume1mthUsd ?? Double()) ?? String())
+        
+        volumeOneHourLabel.configure(text: volumeHourText, font: UIFont.systemFont(ofSize: 20), textColor: .green)
+        volumeOneDayLabel.configure(text: volumeDayText, font: UIFont.systemFont(ofSize: 20), textColor: .green)
+        volumeOneMonthLabel.configure(text: volumeMonthText, font: UIFont.systemFont(ofSize: 20), textColor: .green)
+        
+        websiteLabel.configure(text: exchange.website ?? String(), font: UIFont.systemFont(ofSize: 14), textColor: .blue)
+        websiteLabel.attributedText = NSAttributedString.makeHyperlink(for: exchange.website ?? String(), in: "Visit us")
     }
+    
+    // MARK: - Event Handling
     
     @objc private func websiteLabelTapped() {
         guard let website = exchange.website, let url = URL(string: website) else { return }
         UIApplication.shared.open(url)
     }
+    
+    // MARK: - Image Loading
     
     private func loadImage(icon: String) {
         self.iconImageView.image = UIImage(named: "no-image")

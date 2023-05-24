@@ -404,5 +404,68 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB857826-8585-4EAC-A852-08E6EBCCD127"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoinAPI/Modules/Product/Details/Presentation/DetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "websiteLabelTapped()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AB857826-8585-4EAC-A852-08E6EBCCD127 - 9109e519aea9a58e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoinAPI.DetailViewController.websiteLabelTapped() -&gt; ()"
+                  moduleName = "CoinAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Desktop/Manguinho/CoinAPI/CoinAPI/Modules/Product/Details/Presentation/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "167"
+                  endingLineNumber = "167"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "AB857826-8585-4EAC-A852-08E6EBCCD127 - 9109e519aea9a58e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoinAPI.DetailViewController.websiteLabelTapped() -&gt; ()"
+                  moduleName = "CoinAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Desktop/Manguinho/CoinAPI/CoinAPI/Modules/Product/Details/Presentation/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "167"
+                  endingLineNumber = "167"
+                  offsetFromSymbolStart = "248">
+               </Location>
+               <Location
+                  uuid = "AB857826-8585-4EAC-A852-08E6EBCCD127 - 9109e519aea9a58e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CoinAPI.DetailViewController.websiteLabelTapped() -&gt; ()"
+                  moduleName = "CoinAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Desktop/Manguinho/CoinAPI/CoinAPI/Modules/Product/Details/Presentation/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "167"
+                  endingLineNumber = "167"
+                  offsetFromSymbolStart = "276">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
