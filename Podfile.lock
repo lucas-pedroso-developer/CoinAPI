@@ -1,36 +1,24 @@
 PODS:
   - Kingfisher (7.6.2)
-  - PromiseKit (6.18.1):
-    - PromiseKit/CorePromise (= 6.18.1)
-    - PromiseKit/Foundation (= 6.18.1)
-    - PromiseKit/UIKit (= 6.18.1)
-  - PromiseKit/CorePromise (6.18.1)
-  - PromiseKit/Foundation (6.18.1):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.18.1):
-    - PromiseKit/CorePromise
   - SnapshotTesting (1.9.0)
   - Wormholy (1.6.6)
 
 DEPENDENCIES:
   - Kingfisher (~> 7.6.2)
-  - PromiseKit (~> 6.18.1)
   - SnapshotTesting (~> 1.9.0)
   - Wormholy (~> 1.6.6)
 
 SPEC REPOS:
   trunk:
     - Kingfisher
-    - PromiseKit
     - SnapshotTesting
     - Wormholy
 
 SPEC CHECKSUMS:
   Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
-  PromiseKit: 49d70c53d5d20e346beaea4b276b5dd2ab446bb4
   SnapshotTesting: 6141c48b6aa76ead61431ca665c14ab9a066c53b
   Wormholy: 09da0b876f9276031fd47383627cb75e194fc068
 
-PODFILE CHECKSUM: c4c3c2e481d5799ba4816c102f0a478a13f25230
+PODFILE CHECKSUM: 85511846f0d1604247e4864c844be477b018f9ba
 
 COCOAPODS: 1.12.0
