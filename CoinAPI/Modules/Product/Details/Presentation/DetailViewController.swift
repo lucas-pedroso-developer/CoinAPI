@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 // MARK: - Constants
 enum DetailConstants: String {
@@ -119,7 +120,7 @@ class DetailViewController: UIViewController {
                              backgroundColor: UIColor.lightGray,
                              borderWidth: 2.0,
                              borderColor: UIColor.black)
-
+        
         NSLayoutConstraint.activate([
             circleView.topAnchor.constraint(equalTo: backgroundUIView.bottomAnchor, constant: -70),
             circleView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
@@ -172,13 +173,26 @@ class DetailViewController: UIViewController {
     // MARK: - Image Loading
     
     private func loadImage(icon: String) {
-        self.iconImageView.image = UIImage(named: "no-image")
         if let url = URL(string: icon) {
-            iconImageView.loadImage(from: url) { [weak self] image in
-                DispatchQueue.main.async {
-                    self?.iconImageView.image = image
+            let cacheKey = "\(url)"
+            if let cachedImage = ImageCache.default.retrieveImageInMemoryCache(forKey: cacheKey) {
+                self.iconImageView.image = cachedImage
+            } else {
+                ImageCache.default.retrieveImage(forKey: cacheKey) { result in
+                    switch result {
+                    case .success(let cacheResult):
+                        if let cachedImage = cacheResult.image {
+                            self.iconImageView.image = cachedImage
+                        } else {
+                            self.iconImageView.image = UIImage(named: "no-image")
+                        }
+                    case .failure(let error):
+                        self.iconImageView.image = UIImage(named: "no-image")
+                        print("Retrieve image from cache error: \(error.localizedDescription)")
+                    }
                 }
             }
         }
     }
+    
 }

@@ -1,4 +1,5 @@
-import PromiseKit
+import Combine
+import Foundation
 
 protocol HomeViewModelProtocol {
     func getNumberOfRows(index: Int) -> Int
@@ -7,7 +8,7 @@ protocol HomeViewModelProtocol {
     func getVolumeDayOne(index: Int) -> Double
     func getIcon(index: Int) -> String
     func getSelectedExchange(index: Int) -> ExchangesEntity?
-    func getExchanges() 
+    func getExchanges()
 }
 
 class HomeViewModel: HomeViewModelProtocol {
@@ -18,6 +19,7 @@ class HomeViewModel: HomeViewModelProtocol {
     var iconsEntity: [IconsEntity?]?
     weak var view: HomeViewProtocol?
     private let homeUseCase: HomeUseCaseProtocol
+    var cancellables = Set<AnyCancellable>()
     
     // MARK: - Initialization
     
@@ -32,46 +34,55 @@ extension HomeViewModel {
     // MARK: - Methods
     
     func getExchanges() {
+        
         view?.showLoading()
         
-        let exchangesPromise = Promise<[ExchangesEntity]> { seal in
-            homeUseCase.getExchanges { result in
+        let exchangesPublisher = Future<[ExchangesEntity], Error> { promise in
+            self.homeUseCase.getExchanges { result in
                 switch result {
                 case .success(let exchangesData):
-                    seal.fulfill(exchangesData)
+                    promise(.success(exchangesData))
                 case .failure(let error):
-                    seal.reject(error)
+                    promise(.failure(error))
                 }
             }
         }
+            .receive(on: DispatchQueue.main)
         
-        let iconsPromise = Promise<[IconsEntity]> { seal in
-            homeUseCase.getExchangesIcons { result in
+        let iconsPublisher = Future<[IconsEntity], Error> { promise in
+            self.homeUseCase.getExchangesIcons { result in
                 switch result {
                 case .success(let iconsData):
-                    seal.fulfill(iconsData)
+                    promise(.success(iconsData))
                 case .failure(let error):
-                    seal.reject(error)
+                    promise(.failure(error))
                 }
             }
         }
+            .receive(on: DispatchQueue.main)
         
-        firstly {
-            when(fulfilled: exchangesPromise, iconsPromise)
-        }.done { (exchangesData: [ExchangesEntity], iconsData: [IconsEntity]) in
-            self.exchangesEntity = ExchangesEntity.mapFromIconsData(iconsEntity: iconsData, exchangesEntity: exchangesData)
-            self.view?.reloadTableView()
-        }.catch { error in
-            let errorMessage: String
-            if let customError = error as? HttpError {
-                errorMessage = customError.localizedDescription
-            } else {
-                errorMessage = "Failed to fetch exchanges"
-            }
-            self.view?.showError(message: errorMessage)
-        }.finally {
-            self.view?.hideLoading()
-        }
+        Publishers.Zip(exchangesPublisher, iconsPublisher)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    let errorMessage: String
+                    if let customError = error as? HttpError {
+                        errorMessage = customError.localizedDescription
+                    } else {
+                        errorMessage = "Failed to fetch exchanges"
+                    }
+                    self.view?.showError(message: errorMessage)
+                    self.view?.hideLoading()
+                }
+            }, receiveValue: { [weak self] exchangesData, iconsData in
+                guard let self = self else { return }
+                
+                self.exchangesEntity = ExchangesEntity.mapFromIconsData(iconsEntity: iconsData, exchangesEntity: exchangesData)
+                self.view?.reloadTableView()
+            })
+            .store(in: &cancellables)
     }
 }
 

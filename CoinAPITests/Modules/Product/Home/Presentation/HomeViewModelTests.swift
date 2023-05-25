@@ -1,5 +1,4 @@
 import XCTest
-import PromiseKit
 import Foundation
 @testable import CoinAPI
 

@@ -6,7 +6,6 @@ target 'CoinAPI' do
   use_frameworks!
   
   pod 'Wormholy', '~> 1.6.6'
-  pod 'PromiseKit', '~> 6.18.1'
   pod 'Kingfisher', '~> 7.6.2'
   
   # Pods for CoinAPI
