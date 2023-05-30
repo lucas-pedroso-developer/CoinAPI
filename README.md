@@ -8,8 +8,7 @@
 
 ##Screenshot
 
-![Imagem](https://github.com/lucas-pedroso-developer/CoinAPI/blob/main/HomeScreenshot.png)
-
+<img src="HomeScreenshot.png" alt="KaBuM" width="250" height="600">
 
 ## Descrição
 
